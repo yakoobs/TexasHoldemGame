@@ -19,6 +19,8 @@
 		6A920C401834249D00E7E685 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C281834249D00E7E685 /* UIKit.framework */; };
 		6A920C481834249D00E7E685 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A920C461834249D00E7E685 /* InfoPlist.strings */; };
 		6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */; };
+		6A920C681834347600E7E685 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A920C671834347600E7E685 /* Storyboard.storyboard */; };
+		6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C6B183435BE00E7E685 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		6A920C451834249D00E7E685 /* TexasHoldemGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TexasHoldemGameTests-Info.plist"; sourceTree = "<group>"; };
 		6A920C471834249D00E7E685 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TexasHoldemGameTests.m; sourceTree = "<group>"; };
+		6A920C671834347600E7E685 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = Storyboards/Storyboard.storyboard; sourceTree = "<group>"; };
+		6A920C6A183435BE00E7E685 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = "views and view controllers/MenuViewController.h"; sourceTree = "<group>"; };
+		6A920C6B183435BE00E7E685 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = "views and view controllers/MenuViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 		6A920C2A1834249D00E7E685 /* TexasHoldemGame */ = {
 			isa = PBXGroup;
 			children = (
+				6A920C691834357200E7E685 /* views and view controllers */,
 				6A920C331834249D00E7E685 /* AppDelegate.h */,
 				6A920C341834249D00E7E685 /* AppDelegate.m */,
 				6A920C361834249D00E7E685 /* Images.xcassets */,
@@ -122,6 +128,7 @@
 				6A920C2D1834249D00E7E685 /* InfoPlist.strings */,
 				6A920C301834249D00E7E685 /* main.m */,
 				6A920C321834249D00E7E685 /* TexasHoldemGame-Prefix.pch */,
+				6A920C671834347600E7E685 /* Storyboard.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,6 +149,15 @@
 				6A920C461834249D00E7E685 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A920C691834357200E7E685 /* views and view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C6A183435BE00E7E685 /* MenuViewController.h */,
+				6A920C6B183435BE00E7E685 /* MenuViewController.m */,
+			);
+			name = "views and view controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +237,7 @@
 			files = (
 				6A920C2F1834249D00E7E685 /* InfoPlist.strings in Resources */,
 				6A920C371834249D00E7E685 /* Images.xcassets in Resources */,
+				6A920C681834347600E7E685 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
+				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
 				6A920C311834249D00E7E685 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +463,7 @@
 				6A920C4F1834249D00E7E685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A920C501834249D00E7E685 /* Build configuration list for PBXNativeTarget "TexasHoldemGameTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +472,7 @@
 				6A920C521834249D00E7E685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
