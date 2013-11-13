@@ -21,6 +21,10 @@
 		6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */; };
 		6A920C681834347600E7E685 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A920C671834347600E7E685 /* Storyboard.storyboard */; };
 		6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C6B183435BE00E7E685 /* MenuViewController.m */; };
+		6A920C6F18343E9600E7E685 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C6E18343E9600E7E685 /* HostViewController.m */; };
+		6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7118343EB500E7E685 /* JoinViewController.m */; };
+		6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7418343EC400E7E685 /* SettingsViewController.m */; };
+		6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7718343ED500E7E685 /* InfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		6A920C671834347600E7E685 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = Storyboards/Storyboard.storyboard; sourceTree = "<group>"; };
 		6A920C6A183435BE00E7E685 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = "views and view controllers/MenuViewController.h"; sourceTree = "<group>"; };
 		6A920C6B183435BE00E7E685 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = "views and view controllers/MenuViewController.m"; sourceTree = "<group>"; };
+		6A920C6D18343E9600E7E685 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
+		6A920C6E18343E9600E7E685 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
+		6A920C7018343EB500E7E685 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		6A920C7118343EB500E7E685 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
+		6A920C7318343EC400E7E685 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		6A920C7418343EC400E7E685 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		6A920C7618343ED500E7E685 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		6A920C7718343ED500E7E685 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +166,34 @@
 		6A920C691834357200E7E685 /* views and view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A920C7A18343EF100E7E685 /* join */,
+				6A920C7918343EDB00E7E685 /* host */,
 				6A920C6A183435BE00E7E685 /* MenuViewController.h */,
 				6A920C6B183435BE00E7E685 /* MenuViewController.m */,
+				6A920C7318343EC400E7E685 /* SettingsViewController.h */,
+				6A920C7418343EC400E7E685 /* SettingsViewController.m */,
+				6A920C7618343ED500E7E685 /* InfoViewController.h */,
+				6A920C7718343ED500E7E685 /* InfoViewController.m */,
 			);
 			name = "views and view controllers";
+			sourceTree = "<group>";
+		};
+		6A920C7918343EDB00E7E685 /* host */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C6D18343E9600E7E685 /* HostViewController.h */,
+				6A920C6E18343E9600E7E685 /* HostViewController.m */,
+			);
+			name = host;
+			sourceTree = "<group>";
+		};
+		6A920C7A18343EF100E7E685 /* join */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C7018343EB500E7E685 /* JoinViewController.h */,
+				6A920C7118343EB500E7E685 /* JoinViewController.m */,
+			);
+			name = join;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A920C6F18343E9600E7E685 /* HostViewController.m in Sources */,
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
+				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
+				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
+				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
 				6A920C311834249D00E7E685 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
