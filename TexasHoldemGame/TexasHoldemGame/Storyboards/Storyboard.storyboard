@@ -16,29 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okq-5u-OO3">
-                                <rect key="frame" x="243" y="34" width="82" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okq-5u-OO3">
+                                <rect key="frame" x="243" y="50" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="host_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK0-RU-RA4">
-                                <rect key="frame" x="246" y="90" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK0-RU-RA4">
+                                <rect key="frame" x="246" y="110" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="join_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOx-TI-l7t">
-                                <rect key="frame" x="231" y="153" width="107" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOx-TI-l7t">
+                                <rect key="frame" x="231" y="170" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="settings_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4q-JP-0KO">
-                                <rect key="frame" x="245" y="214" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4q-JP-0KO">
+                                <rect key="frame" x="245" y="230" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="info_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,15 +47,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="XOx-TI-l7t" secondAttribute="centerX" id="7Ut-mx-KF1"/>
-                            <constraint firstAttribute="centerX" secondItem="dK0-RU-RA4" secondAttribute="centerX" id="7WX-F6-8eB"/>
-                            <constraint firstAttribute="centerX" secondItem="F4q-JP-0KO" secondAttribute="centerX" id="EH4-Qi-S8x"/>
-                            <constraint firstAttribute="centerX" secondItem="okq-5u-OO3" secondAttribute="centerX" id="aeM-H3-oqo"/>
+                            <constraint firstItem="dK0-RU-RA4" firstAttribute="top" secondItem="okq-5u-OO3" secondAttribute="bottom" constant="30" id="8Hk-Bw-jMN"/>
+                            <constraint firstAttribute="centerX" secondItem="okq-5u-OO3" secondAttribute="centerX" id="BI1-8m-TAG"/>
+                            <constraint firstAttribute="centerX" secondItem="XOx-TI-l7t" secondAttribute="centerX" id="J10-lO-4GI"/>
+                            <constraint firstItem="XOx-TI-l7t" firstAttribute="top" secondItem="dK0-RU-RA4" secondAttribute="bottom" constant="30" id="Qk3-sr-ymn"/>
+                            <constraint firstAttribute="centerX" secondItem="F4q-JP-0KO" secondAttribute="centerX" id="aVs-qo-I0w"/>
+                            <constraint firstAttribute="centerX" secondItem="dK0-RU-RA4" secondAttribute="centerX" id="f8m-mf-PIN"/>
+                            <constraint firstItem="zSC-y3-TSw" firstAttribute="top" secondItem="F4q-JP-0KO" secondAttribute="bottom" constant="60" id="kbN-ra-brH"/>
+                            <constraint firstItem="F4q-JP-0KO" firstAttribute="top" secondItem="XOx-TI-l7t" secondAttribute="bottom" constant="30" id="xeZ-uH-2zy"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQV-3u-Igk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
