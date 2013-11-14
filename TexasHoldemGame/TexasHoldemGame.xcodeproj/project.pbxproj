@@ -25,6 +25,8 @@
 		6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7118343EB500E7E685 /* JoinViewController.m */; };
 		6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7418343EC400E7E685 /* SettingsViewController.m */; };
 		6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7718343ED500E7E685 /* InfoViewController.m */; };
+		6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */; };
+		6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3120118358A530078C2BB /* MainBoardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		6A920C7418343EC400E7E685 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		6A920C7618343ED500E7E685 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		6A920C7718343ED500E7E685 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		6AC311F91835893B0078C2BB /* WaitForOtherPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaitForOtherPlayersViewController.h; path = "views and view controllers/host/WaitForOtherPlayersViewController.h"; sourceTree = "<group>"; };
+		6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaitForOtherPlayersViewController.m; path = "views and view controllers/host/WaitForOtherPlayersViewController.m"; sourceTree = "<group>"; };
+		6AC3120018358A530078C2BB /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainBoardViewController.h; path = "views and view controllers/game/MainBoardViewController.h"; sourceTree = "<group>"; };
+		6AC3120118358A530078C2BB /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainBoardViewController.m; path = "views and view controllers/game/MainBoardViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,14 +172,12 @@
 		6A920C691834357200E7E685 /* views and view controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6A920C7A18343EF100E7E685 /* join */,
+				6AC311FF18358A2E0078C2BB /* game */,
+				6AC311FC183589AF0078C2BB /* menu */,
 				6A920C7918343EDB00E7E685 /* host */,
-				6A920C6A183435BE00E7E685 /* MenuViewController.h */,
-				6A920C6B183435BE00E7E685 /* MenuViewController.m */,
-				6A920C7318343EC400E7E685 /* SettingsViewController.h */,
-				6A920C7418343EC400E7E685 /* SettingsViewController.m */,
-				6A920C7618343ED500E7E685 /* InfoViewController.h */,
-				6A920C7718343ED500E7E685 /* InfoViewController.m */,
+				6A920C7A18343EF100E7E685 /* join */,
+				6AC311FE183589D90078C2BB /* info, help and about */,
+				6AC311FD183589BD0078C2BB /* settings */,
 			);
 			name = "views and view controllers";
 			sourceTree = "<group>";
@@ -183,6 +187,8 @@
 			children = (
 				6A920C6D18343E9600E7E685 /* HostViewController.h */,
 				6A920C6E18343E9600E7E685 /* HostViewController.m */,
+				6AC311F91835893B0078C2BB /* WaitForOtherPlayersViewController.h */,
+				6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */,
 			);
 			name = host;
 			sourceTree = "<group>";
@@ -194,6 +200,42 @@
 				6A920C7118343EB500E7E685 /* JoinViewController.m */,
 			);
 			name = join;
+			sourceTree = "<group>";
+		};
+		6AC311FC183589AF0078C2BB /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C6A183435BE00E7E685 /* MenuViewController.h */,
+				6A920C6B183435BE00E7E685 /* MenuViewController.m */,
+			);
+			name = menu;
+			sourceTree = "<group>";
+		};
+		6AC311FD183589BD0078C2BB /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C7318343EC400E7E685 /* SettingsViewController.h */,
+				6A920C7418343EC400E7E685 /* SettingsViewController.m */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		6AC311FE183589D90078C2BB /* info, help and about */ = {
+			isa = PBXGroup;
+			children = (
+				6A920C7618343ED500E7E685 /* InfoViewController.h */,
+				6A920C7718343ED500E7E685 /* InfoViewController.m */,
+			);
+			name = "info, help and about";
+			sourceTree = "<group>";
+		};
+		6AC311FF18358A2E0078C2BB /* game */ = {
+			isa = PBXGroup;
+			children = (
+				6AC3120018358A530078C2BB /* MainBoardViewController.h */,
+				6AC3120118358A530078C2BB /* MainBoardViewController.m */,
+			);
+			name = game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A920C6F18343E9600E7E685 /* HostViewController.m in Sources */,
+				6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */,
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
 				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
+				6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */,
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
 				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
