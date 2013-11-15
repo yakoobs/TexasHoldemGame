@@ -27,6 +27,7 @@
 		6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7718343ED500E7E685 /* InfoViewController.m */; };
 		6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */; };
 		6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3120118358A530078C2BB /* MainBoardViewController.m */; };
+		6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaitForOtherPlayersViewController.m; path = "views and view controllers/host/WaitForOtherPlayersViewController.m"; sourceTree = "<group>"; };
 		6AC3120018358A530078C2BB /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainBoardViewController.h; path = "views and view controllers/game/MainBoardViewController.h"; sourceTree = "<group>"; };
 		6AC3120118358A530078C2BB /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainBoardViewController.m; path = "views and view controllers/game/MainBoardViewController.m"; sourceTree = "<group>"; };
+		6AC312031835AAAF0078C2BB /* LoadingGameSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingGameSettingsViewController.h; path = "views and view controllers/game/LoadingGameSettingsViewController.h"; sourceTree = "<group>"; };
+		6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingGameSettingsViewController.m; path = "views and view controllers/game/LoadingGameSettingsViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 			children = (
 				6AC3120018358A530078C2BB /* MainBoardViewController.h */,
 				6AC3120118358A530078C2BB /* MainBoardViewController.m */,
+				6AC312031835AAAF0078C2BB /* LoadingGameSettingsViewController.h */,
+				6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
 				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
+				6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */,
 				6A920C311834249D00E7E685 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
