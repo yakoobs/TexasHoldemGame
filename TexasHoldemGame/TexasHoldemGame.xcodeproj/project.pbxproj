@@ -19,7 +19,6 @@
 		6A920C401834249D00E7E685 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C281834249D00E7E685 /* UIKit.framework */; };
 		6A920C481834249D00E7E685 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A920C461834249D00E7E685 /* InfoPlist.strings */; };
 		6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */; };
-		6A920C681834347600E7E685 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A920C671834347600E7E685 /* Storyboard.storyboard */; };
 		6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C6B183435BE00E7E685 /* MenuViewController.m */; };
 		6A920C6F18343E9600E7E685 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C6E18343E9600E7E685 /* HostViewController.m */; };
 		6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A920C7118343EB500E7E685 /* JoinViewController.m */; };
@@ -28,6 +27,7 @@
 		6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC311FA1835893B0078C2BB /* WaitForOtherPlayersViewController.m */; };
 		6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3120118358A530078C2BB /* MainBoardViewController.m */; };
 		6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */; };
+		6AC312061835AFB60078C2BB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC312081835AFB60078C2BB /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,6 @@
 		6A920C451834249D00E7E685 /* TexasHoldemGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TexasHoldemGameTests-Info.plist"; sourceTree = "<group>"; };
 		6A920C471834249D00E7E685 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TexasHoldemGameTests.m; sourceTree = "<group>"; };
-		6A920C671834347600E7E685 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = Storyboards/Storyboard.storyboard; sourceTree = "<group>"; };
 		6A920C6A183435BE00E7E685 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = "views and view controllers/MenuViewController.h"; sourceTree = "<group>"; };
 		6A920C6B183435BE00E7E685 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = "views and view controllers/MenuViewController.m"; sourceTree = "<group>"; };
 		6A920C6D18343E9600E7E685 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
@@ -74,6 +73,10 @@
 		6AC3120118358A530078C2BB /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainBoardViewController.m; path = "views and view controllers/game/MainBoardViewController.m"; sourceTree = "<group>"; };
 		6AC312031835AAAF0078C2BB /* LoadingGameSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingGameSettingsViewController.h; path = "views and view controllers/game/LoadingGameSettingsViewController.h"; sourceTree = "<group>"; };
 		6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingGameSettingsViewController.m; path = "views and view controllers/game/LoadingGameSettingsViewController.m"; sourceTree = "<group>"; };
+		6AC312091835AFCB0078C2BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		6AC3120A1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6AC3120B1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6AC3120C1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Storyboard.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +152,7 @@
 				6A920C2D1834249D00E7E685 /* InfoPlist.strings */,
 				6A920C301834249D00E7E685 /* main.m */,
 				6A920C321834249D00E7E685 /* TexasHoldemGame-Prefix.pch */,
-				6A920C671834347600E7E685 /* Storyboard.storyboard */,
+				6AC312081835AFB60078C2BB /* Storyboard.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -301,6 +304,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				"pl-PL",
 			);
 			mainGroup = 6A920C181834249D00E7E685;
 			productRefGroup = 6A920C221834249D00E7E685 /* Products */;
@@ -320,7 +325,7 @@
 			files = (
 				6A920C2F1834249D00E7E685 /* InfoPlist.strings in Resources */,
 				6A920C371834249D00E7E685 /* Images.xcassets in Resources */,
-				6A920C681834347600E7E685 /* Storyboard.storyboard in Resources */,
+				6AC312061835AFB60078C2BB /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +380,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A920C2E1834249D00E7E685 /* en */,
+				6AC3120A1835B0550078C2BB /* pl-PL */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -383,8 +389,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A920C471834249D00E7E685 /* en */,
+				6AC3120B1835B0550078C2BB /* pl-PL */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6AC312081835AFB60078C2BB /* Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AC312091835AFCB0078C2BB /* Base */,
+				6AC3120C1835B0550078C2BB /* pl-PL */,
+			);
+			name = Storyboard.storyboard;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

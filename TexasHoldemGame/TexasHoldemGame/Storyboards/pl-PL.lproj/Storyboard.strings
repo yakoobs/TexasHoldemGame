@@ -1,0 +1,51 @@
+
+/* Class = "IBUILabel"; text = "num_label"; ObjectID = "01E-x5-euJ"; */
+"01E-x5-euJ.text" = "num_label";
+
+/* Class = "IBUIButton"; normalTitle = "host_button"; ObjectID = "BFI-e4-Kgh"; */
+"BFI-e4-Kgh.normalTitle" = "host_button";
+
+/* Class = "IBUIButton"; normalTitle = "abandon_button"; ObjectID = "Ctx-x3-V0r"; */
+"Ctx-x3-V0r.normalTitle" = "abandon_button";
+
+/* Class = "IBUIButton"; normalTitle = "info_button"; ObjectID = "F4q-JP-0KO"; */
+"F4q-JP-0KO.normalTitle" = "info_button";
+
+/* Class = "IBUIButton"; normalTitle = "back_button"; ObjectID = "Fdd-Pg-ufY"; */
+"Fdd-Pg-ufY.normalTitle" = "back_button";
+
+/* Class = "IBUILabel"; text = "players_title_label"; ObjectID = "P1I-WZ-Bk4"; */
+"P1I-WZ-Bk4.text" = "players_title_label";
+
+/* Class = "IBUILabel"; text = "available_games_title_label"; ObjectID = "RjS-am-XKO"; */
+"RjS-am-XKO.text" = "available_games_title_label";
+
+/* Class = "IBUIButton"; normalTitle = "join_game_button"; ObjectID = "XJn-vD-0Fu"; */
+"XJn-vD-0Fu.normalTitle" = "join_game_button";
+
+/* Class = "IBUILabel"; text = "tournament_name_label"; ObjectID = "XMf-vI-P8W"; */
+"XMf-vI-P8W.text" = "tournament_name_label";
+
+/* Class = "IBUIButton"; normalTitle = "settings_button"; ObjectID = "XOx-TI-l7t"; */
+"XOx-TI-l7t.normalTitle" = "settings_button";
+
+/* Class = "IBUIButton"; normalTitle = "start_game_button"; ObjectID = "Xhl-On-h6f"; */
+"Xhl-On-h6f.normalTitle" = "start_game_button";
+
+/* Class = "IBUILabel"; text = "nickname_label"; ObjectID = "aSz-fQ-a0Y"; */
+"aSz-fQ-a0Y.text" = "nickname_label";
+
+/* Class = "IBUILabel"; text = "host_nickname_label"; ObjectID = "arr-WR-pkA"; */
+"arr-WR-pkA.text" = "host_nickname_label";
+
+/* Class = "IBUILabel"; text = "tournament_name_label"; ObjectID = "bgB-mz-kZP"; */
+"bgB-mz-kZP.text" = "tournament_name_label";
+
+/* Class = "IBUIButton"; normalTitle = "join_button"; ObjectID = "dK0-RU-RA4"; */
+"dK0-RU-RA4.normalTitle" = "join_button";
+
+/* Class = "IBUIButton"; normalTitle = "abandon_button"; ObjectID = "iyT-KC-V5C"; */
+"iyT-KC-V5C.normalTitle" = "abandon_button";
+
+/* Class = "IBUIButton"; normalTitle = "host_button"; ObjectID = "okq-5u-OO3"; */
+"okq-5u-OO3.normalTitle" = "host_button";
