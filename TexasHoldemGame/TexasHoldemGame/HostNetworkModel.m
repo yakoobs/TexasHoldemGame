@@ -10,16 +10,6 @@
 
 @implementation HostNetworkModel
 
--(instancetype)initWithPlayerName:(NSString*) playerName andTournamentName:(NSString*)tournamentName
-{
-    self = [super init];
-    if (self) {
-        _playerName = playerName;
-        _tournamentName = tournamentName;
-    }
-    return self;
-}
-
 -(void)hostGame
 {
     [super configureSessionDetails];

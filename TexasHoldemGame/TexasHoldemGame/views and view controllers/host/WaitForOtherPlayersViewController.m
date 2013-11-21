@@ -26,16 +26,17 @@
 
 -(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName
 {
-    //TODO: rethink
-    if (_hostNetworkModel) {
         self.hostNetworkModel.playerName = paramPlayerName;
         self.hostNetworkModel.tournamentName = paramTournamentName;
-    }
-    else
+}
+
+-(HostNetworkModel*)hostNetworkModel
+{
+    if (!_hostNetworkModel)
     {
-        _hostNetworkModel = [[HostNetworkModel alloc]initWithPlayerName:paramPlayerName
-                                                      andTournamentName:paramTournamentName];
+        _hostNetworkModel = [[HostNetworkModel alloc]init];
     }
+    return _hostNetworkModel;
 }
 
 @end

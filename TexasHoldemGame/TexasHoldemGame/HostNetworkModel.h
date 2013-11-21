@@ -14,7 +14,6 @@
 @property (nonatomic, copy) NSString* playerName;
 @property (nonatomic, strong) MCAdvertiserAssistant* advertiserAssistant;
 
--(instancetype)initWithPlayerName:(NSString*) playerName andTournamentName:(NSString*)tournamentName;
 -(void)hostGame;
 
 @end
