@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HostViewController : UIViewController
+@interface HostViewController : UIViewController<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *tournamentNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *hostNicknameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *hostTheGameButton;
 
 @end

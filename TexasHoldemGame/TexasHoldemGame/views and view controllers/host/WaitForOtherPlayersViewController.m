@@ -13,26 +13,29 @@
 @end
 
 @implementation WaitForOtherPlayersViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self configureTheGame];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)configureTheGame
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.hostNetworkModel hostGame];
+}
+
+-(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName
+{
+    //TODO: rethink
+    if (_hostNetworkModel) {
+        self.hostNetworkModel.playerName = paramPlayerName;
+        self.hostNetworkModel.tournamentName = paramTournamentName;
+    }
+    else
+    {
+        _hostNetworkModel = [[HostNetworkModel alloc]initWithPlayerName:paramPlayerName
+                                                      andTournamentName:paramTournamentName];
+    }
 }
 
 @end

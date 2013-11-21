@@ -10,12 +10,22 @@
 
 @implementation HostNetworkModel
 
+-(instancetype)initWithPlayerName:(NSString*) playerName andTournamentName:(NSString*)tournamentName
+{
+    self = [super init];
+    if (self) {
+        _playerName = playerName;
+        _tournamentName = tournamentName;
+    }
+    return self;
+}
+
 -(void)hostGame
 {
     [super configureSessionDetails];
     self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceType
                                                                     discoveryInfo:nil
                                                                           session:self.session];
+    [self.advertiserAssistant start];
 }
-
 @end

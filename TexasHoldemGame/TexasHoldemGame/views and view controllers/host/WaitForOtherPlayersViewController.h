@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HostNetworkModel.h"
 
 @interface WaitForOtherPlayersViewController : UIViewController
+
+@property (nonatomic,strong) HostNetworkModel* hostNetworkModel;
+
+-(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName;
 
 @end

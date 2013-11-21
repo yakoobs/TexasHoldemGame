@@ -16,6 +16,9 @@ extern NSString* const kServiceType;
 @property (nonatomic, strong) MCSession* session;
 @property (nonatomic, strong) MCPeerID* peerID;
 
+/**
+* Responsible for initialisation MCSession and MCPeerID properties. MCSession instance's delegate is assigned to self.
+*/
 -(void)configureSessionDetails;
 
 @end

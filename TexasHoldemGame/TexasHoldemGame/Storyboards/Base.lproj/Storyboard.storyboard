@@ -243,6 +243,11 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="hostNicknameTextField" destination="fbj-qg-Exu" id="3tA-bo-QjH"/>
+                        <outlet property="hostTheGameButton" destination="BFI-e4-Kgh" id="RdX-KZ-4ZK"/>
+                        <outlet property="tournamentNameTextField" destination="x3m-kY-mPG" id="h3f-Bn-q2c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aID-an-bm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

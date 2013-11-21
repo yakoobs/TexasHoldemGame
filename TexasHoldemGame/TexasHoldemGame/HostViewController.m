@@ -7,32 +7,49 @@
 //
 
 #import "HostViewController.h"
-
-@interface HostViewController ()
-
-@end
+#import "WaitForOtherPlayersViewController.h"
 
 @implementation HostViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self configureHostNicknameTextField];
+    [self configureTournamentnameTextField];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)configureHostNicknameTextField
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString* initialIDFromDeviceName = [UIDevice currentDevice].name;
+    self.hostNicknameTextField.delegate = self;
+    self.hostNicknameTextField.text = initialIDFromDeviceName;
+}
+
+-(void)configureTournamentnameTextField;
+{
+    static NSString* const kInitialTournamentName  = @"My tournament";
+    self.tournamentNameTextField.delegate = self;
+    self.tournamentNameTextField.text = kInitialTournamentName;
+}
+
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - Push WaitForOtherPlayersViewController with segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    static NSString* const kPushWaitForOtherPlayersVC = @"PushWaitForOtherPlayersVC";
+    if ([segue.identifier isEqualToString:kPushWaitForOtherPlayersVC])
+    {
+        WaitForOtherPlayersViewController* waitForOtherPlayersVC = (WaitForOtherPlayersViewController*)segue.destinationViewController;
+        [waitForOtherPlayersVC setHostNetworkModelPlayerName:self.hostNicknameTextField.text
+                                           andTournamentName:self.tournamentNameTextField.text];
+    }
 }
 
 @end
