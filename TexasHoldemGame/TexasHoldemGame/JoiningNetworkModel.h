@@ -8,9 +8,10 @@
 
 #import "MultipeerConnectionNetworkModel.h"
 
-@interface JoiningNetworkModel : MultipeerConnectionNetworkModel<MCBrowserViewControllerDelegate>
+@interface JoiningNetworkModel : MultipeerConnectionNetworkModel<MCNearbyServiceBrowserDelegate>
 
-@property (nonatomic, strong) MCBrowserViewController* browserVC;
+@property (nonatomic, strong) MCNearbyServiceBrowser* nearbyServiceBrowser;
+@property (nonatomic, strong) NSMutableArray* availableHosts;
 
 -(void)joinToGame;
 
