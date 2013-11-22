@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JoiningNetworkModel.h"
 
-@interface JoinViewController : UIViewController
+@interface JoinViewController : UIViewController<JoiningNetworkModelProtocol,UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) JoiningNetworkModel* joiningNetworkModel;
+@property (weak, nonatomic) IBOutlet UITableView *availableHostsTableView;
+@property (weak, nonatomic) IBOutlet UITextField *playerNicknameLabel;
 
 @end

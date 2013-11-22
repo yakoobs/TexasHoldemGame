@@ -10,14 +10,22 @@
 
 @implementation JoiningNetworkModel
 
--(void)joinToGame
+-(void)startHostsSearching
 {
     [self configureSessionDetails];
     self.nearbyServiceBrowser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID
                                                                  serviceType:kServiceType];
     self.nearbyServiceBrowser.delegate = self;
+    [self.nearbyServiceBrowser startBrowsingForPeers];
 }
 
+-(NSMutableArray*)availableHosts
+{
+    if (!_availableHostsNames) {
+        _availableHostsNames = [[NSMutableArray alloc]init];
+    }
+    return _availableHostsNames;
+}
 
 #pragma mark - MCNearbyServiceBrowserDelegate methods
 
@@ -26,6 +34,7 @@
 withDiscoveryInfo:(NSDictionary *)info
 {
     [self.availableHosts addObject:peerID.displayName];
+    [self.delegate listOfAvailableHostsDidChange];
 }
 
 
@@ -38,6 +47,8 @@ withDiscoveryInfo:(NSDictionary *)info
             break;
         }
     }
+    [self.delegate listOfAvailableHostsDidChange];
 }
+
 
 @end

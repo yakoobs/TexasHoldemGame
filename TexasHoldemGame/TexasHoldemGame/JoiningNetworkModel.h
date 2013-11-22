@@ -8,11 +8,17 @@
 
 #import "MultipeerConnectionNetworkModel.h"
 
+@protocol JoiningNetworkModelProtocol <NSObject>
+
+-(void)listOfAvailableHostsDidChange;
+
+@end
 @interface JoiningNetworkModel : MultipeerConnectionNetworkModel<MCNearbyServiceBrowserDelegate>
 
 @property (nonatomic, strong) MCNearbyServiceBrowser* nearbyServiceBrowser;
-@property (nonatomic, strong) NSMutableArray* availableHosts;
+@property (nonatomic, strong) NSMutableArray* availableHostsNames;
+@property (nonatomic, weak) id <JoiningNetworkModelProtocol> delegate;
 
--(void)joinToGame;
+-(void)startHostsSearching;
 
 @end

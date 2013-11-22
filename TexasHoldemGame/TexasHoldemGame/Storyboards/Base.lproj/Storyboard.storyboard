@@ -168,6 +168,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="availableHostsTableView" destination="9P8-R7-Mgt" id="5s5-Xs-DUK"/>
+                        <outlet property="playerNicknameLabel" destination="FTc-Df-h99" id="4Ys-Y6-FmQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XA6-oI-ICe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
