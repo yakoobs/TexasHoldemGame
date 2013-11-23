@@ -34,6 +34,7 @@ static const NSInteger kDeckCapacity = 52;
     for (NSString* suit in [self validSuits])
     {
         NSInteger value = 0;
+        //value depends on rank from "2"(duce) with value 0 to "A"(ace) with value 12
         for (NSString* rank in [self validRanks])
         {
             Card* card = [[Card alloc]initWithRank:rank suit:suit andValue:value];
