@@ -19,6 +19,11 @@
 @property (nonatomic, strong) NSMutableArray* availableHostsNames;
 @property (nonatomic, weak) id <JoiningNetworkModelProtocol> delegate;
 
+
+/**
+ * Initiates JoiningNetworkModel properties: MCPeerID, MCSession, MCNearbyServiceBrowser objects.
+ * Assignes MCNearbyServiceBrowser delegate to self and finally starts browsing for peers.
+ */
 -(void)startHostsSearching;
 
 @end

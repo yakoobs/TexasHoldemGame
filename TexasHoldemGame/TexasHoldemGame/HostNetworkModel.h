@@ -14,6 +14,11 @@
 @property (nonatomic, copy) NSString* playerName;
 @property (nonatomic, strong) MCAdvertiserAssistant* advertiserAssistant;
 
+
+/**
+ * Initiates HostNetworkModel properties: MCPeerID, MCSession, MCAdvertiserAssistant objects.
+ * Begins advertising the service provided by a local peer and starts the assistant
+ */
 -(void)hostGame;
 
 @end
