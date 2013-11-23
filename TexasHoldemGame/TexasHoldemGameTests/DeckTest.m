@@ -36,7 +36,6 @@
     for (NSInteger i = 1; i<=52; i++)
     {
         Card* card = [deck drawRandomCardAndRemoveItFromDeck];
-        NSLog(@"%@%@",card.rank,card.suit);
         XCTAssertTrue(card, @"Empty card from deck");
         
         for (Card* drawnCard in drawnCards)

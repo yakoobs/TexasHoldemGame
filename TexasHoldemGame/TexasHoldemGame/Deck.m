@@ -33,10 +33,12 @@ static const NSInteger kDeckCapacity = 52;
     NSMutableArray* deckArray = [[NSMutableArray alloc]initWithCapacity:kDeckCapacity];
     for (NSString* suit in [self validSuits])
     {
+        NSInteger value = 0;
         for (NSString* rank in [self validRanks])
         {
-            Card* card = [[Card alloc]initWithRank:rank andSuit:suit];
+            Card* card = [[Card alloc]initWithRank:rank suit:suit andValue:value];
             [deckArray addObject:card];
+            value++;
         }
     }
     return deckArray;
@@ -64,6 +66,7 @@ static const NSInteger kDeckCapacity = 52;
     [self.cardsInDeck removeObjectAtIndex:randomIndex];
     return card;
 }
+
 
 
 @end

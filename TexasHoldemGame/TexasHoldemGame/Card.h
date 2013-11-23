@@ -11,7 +11,8 @@
 @interface Card : NSObject<NSCopying>
 @property (copy, nonatomic) NSString* rank;
 @property (copy, nonatomic) NSString* suit;
+@property NSInteger value;
 
--(instancetype)initWithRank:(NSString*)paramRank andSuit:(NSString*)paramSuit;
+-(instancetype)initWithRank:(NSString*)paramRank suit:(NSString*)paramSuit andValue:(NSInteger)paramValue;
 
 @end
