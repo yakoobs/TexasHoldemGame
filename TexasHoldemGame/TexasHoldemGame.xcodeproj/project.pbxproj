@@ -32,6 +32,9 @@
 		6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3120118358A530078C2BB /* MainBoardViewController.m */; };
 		6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */; };
 		6AC312061835AFB60078C2BB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC312081835AFB60078C2BB /* Storyboard.storyboard */; };
+		6AFA57CE18403F30003D8F33 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA57CD18403F30003D8F33 /* Card.m */; };
+		6AFA57D1184040E3003D8F33 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA57D0184040E3003D8F33 /* Deck.m */; };
+		6AFA57D318405042003D8F33 /* DeckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA57D218405042003D8F33 /* DeckTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,11 @@
 		6AC3120A1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6AC3120B1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6AC3120C1835B0550078C2BB /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Storyboard.strings"; sourceTree = "<group>"; };
+		6AFA57CC18403F30003D8F33 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		6AFA57CD18403F30003D8F33 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		6AFA57CF184040E3003D8F33 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		6AFA57D0184040E3003D8F33 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		6AFA57D218405042003D8F33 /* DeckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 		6A81AB4B183D67760083616C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6AFA57CB18403F00003D8F33 /* game */,
 				6A81AB55183D74580083616C /* multipeer connection */,
 			);
 			name = model;
@@ -196,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */,
+				6AFA57D218405042003D8F33 /* DeckTest.m */,
 				6A920C441834249D00E7E685 /* Supporting Files */,
 			);
 			path = TexasHoldemGameTests;
@@ -277,6 +287,17 @@
 				6AC3120118358A530078C2BB /* MainBoardViewController.m */,
 				6AC312031835AAAF0078C2BB /* LoadingGameSettingsViewController.h */,
 				6AC312041835AAAF0078C2BB /* LoadingGameSettingsViewController.m */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
+		6AFA57CB18403F00003D8F33 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA57CC18403F30003D8F33 /* Card.h */,
+				6AFA57CD18403F30003D8F33 /* Card.m */,
+				6AFA57CF184040E3003D8F33 /* Deck.h */,
+				6AFA57D0184040E3003D8F33 /* Deck.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -384,10 +405,12 @@
 				6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */,
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
 				6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */,
+				6AFA57CE18403F30003D8F33 /* Card.m in Sources */,
 				6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */,
 				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
 				6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */,
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
+				6AFA57D1184040E3003D8F33 /* Deck.m in Sources */,
 				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
 				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
 				6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */,
@@ -399,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AFA57D318405042003D8F33 /* DeckTest.m in Sources */,
 				6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
