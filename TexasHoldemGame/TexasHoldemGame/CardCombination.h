@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, CardCombinationType)
 
 @interface CardCombination : NSObject
 
-@property (nonatomic,copy) NSString* typeName;
+@property (nonatomic,readonly) NSString* typeName;
 @property CardCombinationType type;
 
 @property (nonatomic,strong) Card* firstCard;
