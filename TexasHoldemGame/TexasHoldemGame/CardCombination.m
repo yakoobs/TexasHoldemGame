@@ -42,15 +42,15 @@ const NSInteger kNumberOfCardsToEvaluation = 7;
             
             if (!isValidCard)
             {
-                return NO;
+                return YES;
             }
         }
         else
         {
-            return NO;
+            return YES;
         }
     }
-    return YES;
+    return NO;
 }
 
 -(BOOL)isHigherCombinationThan:(CardCombination*)paramCardCombination
