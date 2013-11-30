@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A6925A71840D2310025DC5D /* CardCombination.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A61840D2310025DC5D /* CardCombination.m */; };
+		6A6925A9184260390025DC5D /* CardCombinationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A8184260390025DC5D /* CardCombinationTest.m */; };
 		6A81AB4A183D67610083616C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A81AB49183D67610083616C /* MultipeerConnectivity.framework */; };
 		6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkModel.m */; };
 		6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB50183D72AB0083616C /* HostNetworkModel.m */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		6A6925A51840D2310025DC5D /* CardCombination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCombination.h; sourceTree = "<group>"; };
 		6A6925A61840D2310025DC5D /* CardCombination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombination.m; sourceTree = "<group>"; };
+		6A6925A8184260390025DC5D /* CardCombinationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombinationTest.m; sourceTree = "<group>"; };
 		6A81AB49183D67610083616C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		6A81AB4C183D67A80083616C /* MultipeerConnectionNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectionNetworkModel.h; sourceTree = "<group>"; };
 		6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectionNetworkModel.m; sourceTree = "<group>"; };
@@ -129,7 +131,7 @@
 		6A81AB4B183D67760083616C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				6AFA57CB18403F00003D8F33 /* ww */,
+				6AFA57CB18403F00003D8F33 /* game */,
 				6A81AB55183D74580083616C /* multipeer connection */,
 			);
 			name = model;
@@ -209,6 +211,7 @@
 			children = (
 				6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */,
 				6AFA57D218405042003D8F33 /* DeckTest.m */,
+				6A6925A8184260390025DC5D /* CardCombinationTest.m */,
 				6A920C441834249D00E7E685 /* Supporting Files */,
 			);
 			path = TexasHoldemGameTests;
@@ -294,7 +297,7 @@
 			name = game;
 			sourceTree = "<group>";
 		};
-		6AFA57CB18403F00003D8F33 /* ww */ = {
+		6AFA57CB18403F00003D8F33 /* game */ = {
 			isa = PBXGroup;
 			children = (
 				6AFA57CC18403F30003D8F33 /* Card.h */,
@@ -304,7 +307,7 @@
 				6A6925A51840D2310025DC5D /* CardCombination.h */,
 				6A6925A61840D2310025DC5D /* CardCombination.m */,
 			);
-			name = ww;
+			name = game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFA57D318405042003D8F33 /* DeckTest.m in Sources */,
+				6A6925A9184260390025DC5D /* CardCombinationTest.m in Sources */,
 				6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

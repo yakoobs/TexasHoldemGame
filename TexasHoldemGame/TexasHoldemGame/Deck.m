@@ -9,6 +9,7 @@
 #import "Deck.h"
 
 static const NSInteger kDeckCapacity = 52;
+static const NSInteger kDeuceValue = 2;
 
 @interface Deck()
 
@@ -33,7 +34,7 @@ static const NSInteger kDeckCapacity = 52;
     NSMutableArray* deckArray = [[NSMutableArray alloc]initWithCapacity:kDeckCapacity];
     for (NSString* suit in [self validSuits])
     {
-        NSInteger value = 2;
+        NSInteger value = kDeuceValue;
         //value depends on rank from "2"(duce) with value 2 to "A"(ace) with value 14
         for (NSString* rank in [self validRanks])
         {
@@ -47,7 +48,7 @@ static const NSInteger kDeckCapacity = 52;
 
 - (NSArray *)validSuits
 {
-    return @[@"♠", @"♣", @"♥", @"♦"];
+    return @[@"s", @"c", @"h", @"d"];
 }
 
 - (NSArray *)validRanks

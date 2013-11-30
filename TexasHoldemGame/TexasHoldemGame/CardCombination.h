@@ -27,13 +27,7 @@ typedef NS_ENUM(NSInteger, CardCombinationType)
 
 @property (nonatomic,readonly) NSString* typeName;
 @property CardCombinationType type;
-
-@property (nonatomic,strong) Card* firstCard;
-@property (nonatomic,strong) Card* secondCard;
-@property (nonatomic,strong) Card* thirdCard;
-@property (nonatomic,strong) Card* fourthCard;
-@property (nonatomic,strong) Card* fifthCard;
-
+@property (nonatomic,strong) NSArray* descendingSortedCardsCombination;
 @property (nonatomic, copy)NSArray* cardsToEvaluate;
 
 /**

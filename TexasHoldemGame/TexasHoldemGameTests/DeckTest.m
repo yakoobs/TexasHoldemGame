@@ -28,7 +28,7 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testDrawingCardFromDeck
 {
     Deck* deck = [[Deck alloc]init];
     NSMutableArray* drawnCards = [NSMutableArray arrayWithCapacity:52];
