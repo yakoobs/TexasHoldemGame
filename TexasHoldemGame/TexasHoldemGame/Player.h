@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSArray* cards;
 @property NSInteger stack;
+@property NSInteger sittingPositionRegardingToDealer;
 
 @end
