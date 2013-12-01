@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A28A439184B6E5D0081D764 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28A438184B6E5D0081D764 /* Board.m */; };
+		6A28A43C184B6F570081D764 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28A43B184B6F570081D764 /* Player.m */; };
 		6A6925A71840D2310025DC5D /* CardCombination.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A61840D2310025DC5D /* CardCombination.m */; };
 		6A6925A9184260390025DC5D /* CardCombinationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A8184260390025DC5D /* CardCombinationTest.m */; };
 		6A81AB4A183D67610083616C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A81AB49183D67610083616C /* MultipeerConnectivity.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A28A437184B6E5D0081D764 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		6A28A438184B6E5D0081D764 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		6A28A43A184B6F570081D764 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		6A28A43B184B6F570081D764 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		6A6925A51840D2310025DC5D /* CardCombination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCombination.h; sourceTree = "<group>"; };
 		6A6925A61840D2310025DC5D /* CardCombination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombination.m; sourceTree = "<group>"; };
 		6A6925A8184260390025DC5D /* CardCombinationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombinationTest.m; sourceTree = "<group>"; };
@@ -306,6 +312,10 @@
 				6AFA57D0184040E3003D8F33 /* Deck.m */,
 				6A6925A51840D2310025DC5D /* CardCombination.h */,
 				6A6925A61840D2310025DC5D /* CardCombination.m */,
+				6A28A437184B6E5D0081D764 /* Board.h */,
+				6A28A438184B6E5D0081D764 /* Board.m */,
+				6A28A43A184B6F570081D764 /* Player.h */,
+				6A28A43B184B6F570081D764 /* Player.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -411,6 +421,7 @@
 				6A920C6F18343E9600E7E685 /* HostViewController.m in Sources */,
 				6AC3120218358A530078C2BB /* MainBoardViewController.m in Sources */,
 				6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */,
+				6A28A439184B6E5D0081D764 /* Board.m in Sources */,
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
 				6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */,
 				6AFA57CE18403F30003D8F33 /* Card.m in Sources */,
@@ -423,6 +434,7 @@
 				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
 				6A6925A71840D2310025DC5D /* CardCombination.m in Sources */,
 				6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */,
+				6A28A43C184B6F570081D764 /* Player.m in Sources */,
 				6A920C311834249D00E7E685 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
