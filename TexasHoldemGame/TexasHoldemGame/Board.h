@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Deck.h"
+
 @class Card;
 
 @interface Board : NSObject
 
+@property (nonatomic,strong) Deck* deck;
 @property NSInteger pot;
-@property (strong, nonatomic) NSArray* flop;
-@property (strong, nonatomic) Card* turn;
-@property (strong, nonatomic) Card* river;
+@property (strong, nonatomic) NSArray* cardsOnBoard;
+@property (strong, nonatomic) NSArray* players;
 
 @end

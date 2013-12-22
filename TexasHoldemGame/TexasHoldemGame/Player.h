@@ -11,7 +11,7 @@
 @interface Player : NSObject
 
 @property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSArray* cards;
+@property (nonatomic, strong) NSArray* cardsInTheHand;
 @property NSInteger stack;
 @property NSInteger sittingPositionRegardingToDealer;
 
