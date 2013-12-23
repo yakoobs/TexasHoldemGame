@@ -12,7 +12,16 @@
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSArray* cardsInTheHand;
-@property NSInteger stack;
-@property NSInteger sittingPositionRegardingToDealer;
+@property NSUInteger stack;
+@property NSUInteger sittingPositionRegardingToDealer;
+@property (nonatomic, getter = isNotFolded) BOOL notFolded;
+@property (nonatomic, getter = isMyTurn) BOOL myTurn;
+
+/**
+ * Initialize Player* object with custom parameters.
+ * @param (NSString*)paramName name property of the Player object
+ * @param (NSUInteger)paramStack amount of chips in init stack of Player object
+ */
+-(id)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack;
 
 @end

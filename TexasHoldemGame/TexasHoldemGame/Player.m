@@ -10,4 +10,32 @@
 
 @implementation Player
 
+-(id)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack
+{
+    self = [self init];
+    
+    self.name = paramName;
+    self.stack = paramStack;
+    self.notFolded = YES;
+    self.myTurn = NO;
+    
+    return self;
+}
+
+-(NSString*)name
+{
+    if (!_name) {
+        _name = [[NSString alloc]init];
+    }
+    return _name;
+}
+
+-(NSArray*)cardsInTheHand
+{
+    if (!_cardsInTheHand) {
+        _cardsInTheHand = [[NSArray alloc]init];
+    }
+    return _cardsInTheHand;
+}
+
 @end
