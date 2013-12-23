@@ -1,0 +1,117 @@
+//
+//  GameModelTests.m
+//  TexasHoldemGame
+//
+//  Created by Jakub Sokolowski on 23/12/2013.
+//  Copyright (c) 2013 WUT. All rights reserved.
+//
+
+#import <XCTest/XCTest.h>
+#import "GameModel.h"
+
+@interface GameModelTests : XCTestCase
+
+@property(nonatomic, strong) GameModel* gameModel2;
+@property(nonatomic, strong) GameModel* gameModel3;
+@property(nonatomic, strong) GameModel* gameModel4;
+@property(nonatomic, strong) GameModel* gameModel6;
+
+@end
+
+@implementation GameModelTests
+
+- (void)setUp
+{
+    [super setUp];
+    // Put setup code here; it will be run once, before the first test case.
+}
+
+- (void)tearDown
+{
+    // Put teardown code here; it will be run once, after the last test case.
+    [super tearDown];
+}
+
+#pragma mark - create game model methods
+-(void)createGameModelWithTwoPlayers
+{
+    NSArray* playerNames = @[ @"player1", @"player2"];
+    self.gameModel2 = [[GameModel alloc]initWithPlayersNames:playerNames];
+}
+
+-(void)createGameModelWithThreePlayers
+{
+    NSArray* playerNames = @[ @"player1", @"player2", @"player3"];
+    self.gameModel3 = [[GameModel alloc]initWithPlayersNames:playerNames];
+}
+
+-(void)createGameModelWithFourPlayers
+{
+    NSArray* playerNames = @[ @"player1", @"player2", @"player3", @"player4"];
+    self.gameModel4 = [[GameModel alloc]initWithPlayersNames:playerNames];
+}
+
+
+-(void)createGameModelWithSixPlayers
+{
+    NSArray* playerNames = @[ @"player1", @"player2", @"player3", @"player4", @"player5", @"player6" ];
+    self.gameModel6 = [[GameModel alloc]initWithPlayersNames:playerNames];
+}
+
+
+#pragma  mark - test methods
+- (void)testCreateGameModel
+{
+    [self createGameModelWithTwoPlayers];
+    
+    XCTAssertNotNil(self.gameModel2, @"self.gameModel initialized as nil");
+    XCTAssertNotNil(self.gameModel2.board, @"self.gameModel.board initialized as nil");
+    XCTAssertNotNil(self.gameModel2.board.players, @"self.gameModel.board.players initialized as nil");
+    XCTAssertNotNil(self.gameModel2.board.playersWithCards, @"self.gameModel.board.playersWithCards initialized as nil");
+    
+
+    [self createGameModelWithThreePlayers];
+    
+    XCTAssertNotNil(self.gameModel3, @"self.gameModel initialized as nil");
+    XCTAssertNotNil(self.gameModel3.board, @"self.gameModel.board initialized as nil");
+    XCTAssertNotNil(self.gameModel3.board.players, @"self.gameModel.board.players initialized as nil");
+    XCTAssertNotNil(self.gameModel3.board.playersWithCards, @"self.gameModel.board.playersWithCards initialized as nil");
+    
+    [self createGameModelWithFourPlayers];
+    
+    XCTAssertNotNil(self.gameModel4, @"self.gameModel initialized as nil");
+    XCTAssertNotNil(self.gameModel4.board, @"self.gameModel.board initialized as nil");
+    XCTAssertNotNil(self.gameModel4.board.players, @"self.gameModel.board.players initialized as nil");
+    XCTAssertNotNil(self.gameModel4.board.playersWithCards, @"self.gameModel.board.playersWithCards initialized as nil");
+    
+    [self createGameModelWithSixPlayers];
+    
+    XCTAssertNotNil(self.gameModel6, @"self.gameModel initialized as nil");
+    XCTAssertNotNil(self.gameModel6.board, @"self.gameModel.board initialized as nil");
+    XCTAssertNotNil(self.gameModel6.board.players, @"self.gameModel.board.players initialized as nil");
+    XCTAssertNotNil(self.gameModel6.board.playersWithCards, @"self.gameModel.board.playersWithCards initialized as nil");
+    
+}
+
+-(void)testInitialGameStates;
+{
+    [self createGameModelWithTwoPlayers];
+    XCTAssertTrue(self.gameModel2.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
+    XCTAssertTrue(self.gameModel2.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
+    
+    [self createGameModelWithThreePlayers];
+    XCTAssertTrue(self.gameModel3.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
+    XCTAssertTrue(self.gameModel3.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
+
+    
+    [self createGameModelWithFourPlayers];
+    XCTAssertTrue(self.gameModel4.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
+    XCTAssertTrue(self.gameModel4.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
+    
+    [self createGameModelWithSixPlayers];
+    XCTAssertTrue(self.gameModel6.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
+    XCTAssertTrue(self.gameModel6.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
+
+}
+
+@end

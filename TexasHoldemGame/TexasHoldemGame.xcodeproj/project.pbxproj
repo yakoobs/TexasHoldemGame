@@ -15,6 +15,8 @@
 		6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkModel.m */; };
 		6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB50183D72AB0083616C /* HostNetworkModel.m */; };
 		6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB53183D73F00083616C /* JoiningNetworkModel.m */; };
+		6A8D29BB186779AC00042C56 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BA186779AC00042C56 /* GameModel.m */; };
+		6A8D29BD1868593D00042C56 /* GameModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BC1868593D00042C56 /* GameModelTests.m */; };
 		6A920C251834249D00E7E685 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C241834249D00E7E685 /* Foundation.framework */; };
 		6A920C271834249D00E7E685 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C261834249D00E7E685 /* CoreGraphics.framework */; };
 		6A920C291834249D00E7E685 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C281834249D00E7E685 /* UIKit.framework */; };
@@ -66,6 +68,9 @@
 		6A81AB50183D72AB0083616C /* HostNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostNetworkModel.m; sourceTree = "<group>"; };
 		6A81AB52183D73F00083616C /* JoiningNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoiningNetworkModel.h; sourceTree = "<group>"; };
 		6A81AB53183D73F00083616C /* JoiningNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoiningNetworkModel.m; sourceTree = "<group>"; };
+		6A8D29B9186779AC00042C56 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		6A8D29BA186779AC00042C56 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		6A8D29BC1868593D00042C56 /* GameModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModelTests.m; sourceTree = "<group>"; };
 		6A920C211834249D00E7E685 /* TexasHoldemGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TexasHoldemGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A920C241834249D00E7E685 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A920C261834249D00E7E685 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -218,6 +223,7 @@
 				6A920C491834249D00E7E685 /* TexasHoldemGameTests.m */,
 				6AFA57D218405042003D8F33 /* DeckTest.m */,
 				6A6925A8184260390025DC5D /* CardCombinationTest.m */,
+				6A8D29BC1868593D00042C56 /* GameModelTests.m */,
 				6A920C441834249D00E7E685 /* Supporting Files */,
 			);
 			path = TexasHoldemGameTests;
@@ -265,6 +271,32 @@
 			name = join;
 			sourceTree = "<group>";
 		};
+		6AACEE5A1860123900C2836B /* board and cards combination */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA57CC18403F30003D8F33 /* Card.h */,
+				6AFA57CD18403F30003D8F33 /* Card.m */,
+				6AFA57CF184040E3003D8F33 /* Deck.h */,
+				6AFA57D0184040E3003D8F33 /* Deck.m */,
+				6A6925A51840D2310025DC5D /* CardCombination.h */,
+				6A6925A61840D2310025DC5D /* CardCombination.m */,
+				6A28A437184B6E5D0081D764 /* Board.h */,
+				6A28A438184B6E5D0081D764 /* Board.m */,
+				6A28A43A184B6F570081D764 /* Player.h */,
+				6A28A43B184B6F570081D764 /* Player.m */,
+			);
+			name = "board and cards combination";
+			sourceTree = "<group>";
+		};
+		6AACEE5B1860128500C2836B /* game logic */ = {
+			isa = PBXGroup;
+			children = (
+				6A8D29B9186779AC00042C56 /* GameModel.h */,
+				6A8D29BA186779AC00042C56 /* GameModel.m */,
+			);
+			name = "game logic";
+			sourceTree = "<group>";
+		};
 		6AC311FC183589AF0078C2BB /* menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,16 +338,8 @@
 		6AFA57CB18403F00003D8F33 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				6AFA57CC18403F30003D8F33 /* Card.h */,
-				6AFA57CD18403F30003D8F33 /* Card.m */,
-				6AFA57CF184040E3003D8F33 /* Deck.h */,
-				6AFA57D0184040E3003D8F33 /* Deck.m */,
-				6A6925A51840D2310025DC5D /* CardCombination.h */,
-				6A6925A61840D2310025DC5D /* CardCombination.m */,
-				6A28A437184B6E5D0081D764 /* Board.h */,
-				6A28A438184B6E5D0081D764 /* Board.m */,
-				6A28A43A184B6F570081D764 /* Player.h */,
-				6A28A43B184B6F570081D764 /* Player.m */,
+				6AACEE5B1860128500C2836B /* game logic */,
+				6AACEE5A1860123900C2836B /* board and cards combination */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -427,6 +451,7 @@
 				6AFA57CE18403F30003D8F33 /* Card.m in Sources */,
 				6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */,
 				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
+				6A8D29BB186779AC00042C56 /* GameModel.m in Sources */,
 				6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */,
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6AFA57D1184040E3003D8F33 /* Deck.m in Sources */,
@@ -444,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFA57D318405042003D8F33 /* DeckTest.m in Sources */,
+				6A8D29BD1868593D00042C56 /* GameModelTests.m in Sources */,
 				6A6925A9184260390025DC5D /* CardCombinationTest.m in Sources */,
 				6A920C4A1834249D00E7E685 /* TexasHoldemGameTests.m in Sources */,
 			);
