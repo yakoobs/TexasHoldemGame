@@ -16,4 +16,10 @@
  */
 - (Card *)drawRandomCardAndRemoveItFromDeck;
 
+
+/**
+ * Reset deck to full 52 cards, required before start of new hand
+ */
+- (void) resetDeck;
+
 @end

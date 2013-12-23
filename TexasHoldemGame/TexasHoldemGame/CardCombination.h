@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, CardCombinationType)
 
 /**
 * YES if combination is higher than paramCardCombination.
- * If NO it does not mean that paramCardCombination is higher combination. Equality is possible
+ * If NO it DOES NOT mean that paramCardCombination is higher combination. Equality is possible!
 */
 -(BOOL)isHigherCombinationThan:(CardCombination*)paramCardCombination;
 

@@ -17,6 +17,7 @@ static const NSInteger kDeuceValue = 2;
 
 @end
 
+
 @implementation Deck
 
 -(id)init
@@ -69,6 +70,10 @@ static const NSInteger kDeuceValue = 2;
     return card;
 }
 
+-(void)resetDeck
+{
+    self.cardsInDeck = [self fullDeck];
+}
 
 
 @end
