@@ -286,14 +286,7 @@
 
 -(void)activePlayerChoseCall
 {
-    if (self.amountOfChipsToCall >= self.activePlayer.stack)
-    {
-        [self.activePlayer playerGoesAllIn];
-    }
-    else
-    {
-        [self.activePlayer playerCallsAmount:self.amountOfChipsToCall];
-    }
+    [self.activePlayer playerCallsAmount:self.amountOfChipsToCall];
 }
 
 -(void)activePlayerChoseBetWithTheAmountOf:(NSUInteger)paramAmount

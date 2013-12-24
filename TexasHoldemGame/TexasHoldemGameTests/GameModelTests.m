@@ -97,20 +97,20 @@
 {
     [self createGameModelWithTwoPlayers];
     XCTAssertTrue(self.gameModel2.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
-    XCTAssertTrue(self.gameModel2.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
+    XCTAssertTrue(self.gameModel2.board.activePlayer.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
     
     [self createGameModelWithThreePlayers];
     XCTAssertTrue(self.gameModel3.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
-    XCTAssertTrue(self.gameModel3.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
+    XCTAssertTrue(self.gameModel3.board.activePlayer.sittingPositionRegardingToDealer == 0, @"Incorrect position of player with first decision");
 
     
     [self createGameModelWithFourPlayers];
     XCTAssertTrue(self.gameModel4.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
-    XCTAssertTrue(self.gameModel4.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
+    XCTAssertTrue(self.gameModel4.board.activePlayer.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
     
     [self createGameModelWithSixPlayers];
     XCTAssertTrue(self.gameModel6.gameState == GameStatePreFlop, @"Incorrect state after game model initialisation");
-    XCTAssertTrue(self.gameModel6.board.activePlayerWithDecision.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
+    XCTAssertTrue(self.gameModel6.board.activePlayer.sittingPositionRegardingToDealer == 3, @"Incorrect position of player with first decision");
 
 }
 

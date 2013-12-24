@@ -45,7 +45,7 @@
     self.playerState = PlayerStateAllIn;
 }
 
--(void)playerBetsOrRaisedToAmount:(NSUInteger)paramAmount
+-(void)playerBetsAmount:(NSUInteger)paramAmount
 {
     self.playerState = PlayerStateRaiseOrBet;
     self.amountBettedInThisRound = paramAmount;
@@ -54,9 +54,16 @@
 
 -(void)playerCallsAmount:(NSUInteger)paramAmount
 {
-    self.amountBettedInThisRound = paramAmount;
-    self.stack -= paramAmount;
-    self.playerState = PlayerStateCall;
+    if (paramAmount >= self.stack)
+    {
+        [self playerGoesAllIn];
+    }
+    else
+    {
+        self.amountBettedInThisRound = paramAmount;
+        self.stack -= paramAmount;
+        self.playerState = PlayerStateCall;
+    }
 }
 
 
