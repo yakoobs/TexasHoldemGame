@@ -8,14 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PlayerOnTableState)
+{
+    PlayerStateWaitingForTheirTurn,
+    PlayerStateMakingDecision,
+    PlayerStateCall,
+    PlayerStateCheck,
+    PlayerStateRaise,
+    PlayerStateAllIn,
+    PlayerStateWaitingNextHand,
+};
+
 @interface Player : NSObject
 
+@property (nonatomic, strong) NSString* uniqueID;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSArray* cardsInTheHand;
 @property NSUInteger stack;
+@property NSUInteger amountBettedInThisRound;
 @property NSUInteger sittingPositionRegardingToDealer;
-@property (nonatomic, getter = isNotFolded) BOOL notFolded;
-@property (nonatomic, getter = isMyTurn) BOOL myTurn;
+@property (nonatomic) PlayerOnTableState playerState;
 
 /**
  * Initialize Player* object with custom parameters.

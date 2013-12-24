@@ -16,8 +16,7 @@
     
     self.name = paramName;
     self.stack = paramStack;
-    self.notFolded = YES;
-    self.myTurn = NO;
+    self.playerState = PlayerStateWaitingNextHand;
     
     return self;
 }
