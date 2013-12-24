@@ -48,7 +48,7 @@
 /**
  *Instance of Player* which actually have decision to made
  */
-@property (weak, nonatomic) Player* activePlayerWithDecision;
+@property (weak, nonatomic) Player* activePlayer;
 
 /**
  * YES when only two players left in tournament

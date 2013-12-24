@@ -37,4 +37,27 @@
     return _cardsInTheHand;
 }
 
+
+-(void)playerGoesAllIn
+{
+    self.amountBettedInThisRound += self.stack;
+    self.stack = 0;
+    self.playerState = PlayerStateAllIn;
+}
+
+-(void)playerBetsOrRaisedToAmount:(NSUInteger)paramAmount
+{
+    self.playerState = PlayerStateRaiseOrBet;
+    self.amountBettedInThisRound = paramAmount;
+    self.stack = paramAmount;
+}
+
+-(void)playerCallsAmount:(NSUInteger)paramAmount
+{
+    self.amountBettedInThisRound = paramAmount;
+    self.stack -= paramAmount;
+    self.playerState = PlayerStateCall;
+}
+
+
 @end

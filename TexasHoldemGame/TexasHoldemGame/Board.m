@@ -17,6 +17,9 @@
  */
 @property (nonatomic) NSUInteger positionOfFirstPlayerWithDecision;
 
+@property (nonatomic) BOOL betWasMade;
+@property (nonatomic) NSUInteger amountOfChipsToCall;
+
 @end
 
 @implementation Board
@@ -161,7 +164,7 @@
         {
             if (player.playerState != PlayerStateAllIn)
             {
-                self.activePlayerWithDecision = player;
+                self.activePlayer = player;
                 player.playerState = PlayerStateMakingDecision;
             }
             else
@@ -232,7 +235,7 @@
 -(void)activateNextPlayer
 {
 
-    NSUInteger newActivePlayerPosition = self.activePlayerWithDecision.sittingPositionRegardingToDealer + 1;
+    NSUInteger newActivePlayerPosition = self.activePlayer.sittingPositionRegardingToDealer + 1;
     if (newActivePlayerPosition > self.players.count - 1)
     {
         newActivePlayerPosition = 0;
@@ -244,8 +247,8 @@
     }
     else
     {
-        self.activePlayerWithDecision = [self returnPlayerWithCardsOnPosition:newActivePlayerPosition];
-        if (self.activePlayerWithDecision.playerState != PlayerStateWaitingForTheirTurn)
+        self.activePlayer = [self returnPlayerWithCardsOnPosition:newActivePlayerPosition];
+        if (self.activePlayer.playerState != PlayerStateWaitingForTheirTurn)
         {
             [self activateNextPlayer];
         }
@@ -266,9 +269,10 @@
 
 -(void)activePlayerChoseFold
 {
-    self.activePlayerWithDecision.playerState = PlayerStateWaitingNextHand;
-    self.pot += self.activePlayerWithDecision.amountBettedInThisRound;
-    [self.playersWithCards removeObject:self.activePlayerWithDecision];
+    self.pot += self.activePlayer.amountBettedInThisRound;
+    self.activePlayer.amountBettedInThisRound = 0;
+    self.activePlayer.playerState = PlayerStateWaitingNextHand;
+    [self.playersWithCards removeObject:self.activePlayer];
     if (self.playersWithCards.count == 1)
     {
         [self lastManStandingIsTakingThePot];
@@ -277,29 +281,46 @@
 
 -(void)activePlayerChoseCheck
 {
-    
+    self.activePlayer.playerState = PlayerStateCheck;
 }
 
 -(void)activePlayerChoseCall
 {
-    
+    if (self.amountOfChipsToCall >= self.activePlayer.stack)
+    {
+        [self.activePlayer playerGoesAllIn];
+    }
+    else
+    {
+        [self.activePlayer playerCallsAmount:self.amountOfChipsToCall];
+    }
 }
 
 -(void)activePlayerChoseBetWithTheAmountOf:(NSUInteger)paramAmount
 {
-    self.positionOfFirstPlayerWithDecision = self.activePlayerWithDecision.sittingPositionRegardingToDealer;
-
+    self.betWasMade = YES;
+    for (Player* player in self.playersWithCards)
+    {
+        player.playerState = PlayerStateWaitingForTheirTurn;
+    }
+    
+    [self.activePlayer playerBetsAmount:paramAmount];
+    
+    self.amountOfChipsToCall = self.activePlayer.amountBettedInThisRound;
+    self.positionOfFirstPlayerWithDecision = self.activePlayer.sittingPositionRegardingToDealer;
 }
 
 -(void)activePlayerChoseRaiseWithTheAmountOf:(NSUInteger)paramAmount
 {
-    self.positionOfFirstPlayerWithDecision = self.activePlayerWithDecision.sittingPositionRegardingToDealer;
-
+    [self activePlayerChoseBetWithTheAmountOf:paramAmount];
 }
 
 -(void)activePlayerChoseAllIn
 {
-    self.positionOfFirstPlayerWithDecision = self.activePlayerWithDecision.sittingPositionRegardingToDealer;
+    self.betWasMade = YES;
+    [self.activePlayer playerGoesAllIn];
+    self.amountOfChipsToCall = self.activePlayer.amountBettedInThisRound;
+    self.positionOfFirstPlayerWithDecision = self.activePlayer.sittingPositionRegardingToDealer;
 }
 
 -(void)lastManStandingIsTakingThePot

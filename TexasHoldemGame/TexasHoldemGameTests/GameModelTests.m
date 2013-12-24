@@ -118,18 +118,18 @@
 {
     [self createGameModelWithTwoPlayers];
     [self.gameModel2 activePlayerChoseFold];
-    XCTAssertTrue(self.gameModel2.gameState == GameStateEndOfTheHand, @"Hand should have ended");
+    XCTAssertTrue(self.gameModel2.gameState == GameStateEndOfTheHand, @"Hand should have ended because all opponents folded");
     
     [self createGameModelWithThreePlayers];
     [self.gameModel3 activePlayerChoseFold];
     [self.gameModel3 activePlayerChoseFold];
-    XCTAssertTrue(self.gameModel3.gameState == GameStateEndOfTheHand, @"Hand should have ended");
+    XCTAssertTrue(self.gameModel3.gameState == GameStateEndOfTheHand, @"Hand should have ended because all opponents folded");
 
     [self createGameModelWithFourPlayers];
     [self.gameModel4 activePlayerChoseFold];
     [self.gameModel4 activePlayerChoseFold];
     [self.gameModel4 activePlayerChoseFold];
-    XCTAssertTrue(self.gameModel4.gameState == GameStateEndOfTheHand, @"Hand should have ended");
+    XCTAssertTrue(self.gameModel4.gameState == GameStateEndOfTheHand, @"Hand should have ended because all opponents folded");
     
     
     [self createGameModelWithSixPlayers];
@@ -138,7 +138,7 @@
     [self.gameModel6 activePlayerChoseFold];
     [self.gameModel6 activePlayerChoseFold];
     [self.gameModel6 activePlayerChoseFold];
-    XCTAssertTrue(self.gameModel6.gameState == GameStateEndOfTheHand, @"Hand should have ended");
+    XCTAssertTrue(self.gameModel6.gameState == GameStateEndOfTheHand, @"Hand should have ended because all opponents folded");
 
 }
 

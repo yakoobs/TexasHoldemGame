@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, PlayerOnTableState)
     PlayerStateMakingDecision,
     PlayerStateCall,
     PlayerStateCheck,
-    PlayerStateRaise,
+    PlayerStateRaiseOrBet,
     PlayerStateAllIn,
     PlayerStateWaitingNextHand,
 };
@@ -35,5 +35,11 @@ typedef NS_ENUM(NSUInteger, PlayerOnTableState)
  * @param (NSUInteger)paramStack amount of chips in init stack of Player object
  */
 -(id)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack;
+
+-(void)playerGoesAllIn;
+
+-(void)playerBetsAmount:(NSUInteger)paramAmount;
+
+-(void)playerCallsAmount:(NSUInteger)paramAmount;
 
 @end
