@@ -243,7 +243,7 @@
     
     if (newActivePlayerPosition == self.positionOfFirstPlayerWithDecision)
     {
-        [self.delegate performEndOfBettingRound];
+        [self performEndOfBettingRound];
     }
     else
     {
@@ -322,5 +322,16 @@
     player.stack += self.pot;
     player.playerState = PlayerStateWaitingNextHand;
     [self.delegate allOpponentsFolded];
+}
+
+-(void)performEndOfBettingRound
+{
+    for (Player* player in self.playersWithCards)
+    {
+        player.playerState = PlayerStateWaitingForTheirTurn;
+        self.pot += player.amountBettedInThisRound;
+        player.amountBettedInThisRound = 0;
+    }
+    [self.delegate performEndOfBettingRound];
 }
 @end

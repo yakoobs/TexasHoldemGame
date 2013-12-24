@@ -139,7 +139,37 @@
     [self.gameModel6 activePlayerChoseFold];
     [self.gameModel6 activePlayerChoseFold];
     XCTAssertTrue(self.gameModel6.gameState == GameStateEndOfTheHand, @"Hand should have ended because all opponents folded");
-
 }
 
+-(void)testAllGoesAllInAtTheBeginning
+{
+    [self createGameModelWithTwoPlayers];
+    [self.gameModel2 activePlayerChoseAllIn];
+    [self.gameModel2 activePlayerChoseAllIn];
+    XCTAssertTrue(self.gameModel2.gameState == GameStateFlopShown, @"flop should have been shown");
+    
+    [self createGameModelWithThreePlayers];
+    [self.gameModel3 activePlayerChoseAllIn];
+    [self.gameModel3 activePlayerChoseAllIn];
+    [self.gameModel3 activePlayerChoseAllIn];
+    XCTAssertTrue(self.gameModel3.gameState == GameStateFlopShown, @"flop should have been shown");
+    
+    
+    [self createGameModelWithFourPlayers];
+    [self.gameModel4 activePlayerChoseAllIn];
+    [self.gameModel4 activePlayerChoseAllIn];
+    [self.gameModel4 activePlayerChoseAllIn];
+    [self.gameModel4 activePlayerChoseAllIn];
+    XCTAssertTrue(self.gameModel4.gameState == GameStateFlopShown, @"flop should have been shown");
+    
+    
+    [self createGameModelWithSixPlayers];
+    [self.gameModel6 activePlayerChoseAllIn];
+    [self.gameModel6 activePlayerChoseAllIn];
+    [self.gameModel6 activePlayerChoseAllIn];
+    [self.gameModel6 activePlayerChoseAllIn];
+    [self.gameModel6 activePlayerChoseAllIn];
+    [self.gameModel6 activePlayerChoseAllIn];
+    XCTAssertTrue(self.gameModel6.gameState == GameStateFlopShown, @"flop should have been shown");
+}
 @end
