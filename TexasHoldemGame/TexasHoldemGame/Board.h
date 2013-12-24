@@ -17,12 +17,19 @@
  */
 -(void)performEndOfBettingRound;
 
+/**
+ * Called when all players except one folded their hands
+ */
+-(void)allOpponentsFolded;
+
 @end
 
 @interface Board : NSObject
 
 @property (nonatomic,strong) Deck* deck;
 @property (nonatomic) NSUInteger pot;
+@property (nonatomic) NSUInteger smallBlind;
+@property (nonatomic) NSUInteger bigBlind;
 /**
  * Array of Card* objects which are common for all players (flop, turn and river)
  */
@@ -54,10 +61,12 @@
  * Custom init method
  * @param (NSArray*)paramPlayersNames is an array of player names
  * @param (NSUInteger)paramInitialStack defines initial stack for each player
+ * @param (NSUInteger)paramSmallBlind is the initial small blind in tournament, big blind is automatically multiply by 2
  * @param (id<BoardGameProtocol>)paramDelegate defines delegate to game model
  */
 -(id)initWithPlayersNames:(NSArray*)paramPlayersNames
              initialStack:(NSUInteger)paramInitialStack
+               smallBlind:(NSUInteger)paramSmallBlind
               andDelegate:(id<BoardGameProtocol>)paramDelegate;
 
 /**

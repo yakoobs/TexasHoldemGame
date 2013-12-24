@@ -23,6 +23,7 @@
 
 -(id)initWithPlayersNames:(NSArray*)paramPlayersNames
              initialStack:(NSUInteger)paramInitialStack
+               smallBlind:(NSUInteger)paramSmallBlind
               andDelegate:(id<BoardGameProtocol>)paramDelegate
 {
     self = [self init];
@@ -37,7 +38,8 @@
     }
     
     self.players = tempPlayers;
-    [self updateActivePlayers];
+    self.smallBlind = paramSmallBlind;
+    self.bigBlind = (paramSmallBlind * 2);
     self.delegate = paramDelegate;
     return self;
 }
@@ -100,6 +102,7 @@
     self.pot = 0;
     [self.deck resetDeck];
     [self dealTwoCardsForEachPlayer];
+    [self updatePlayersWithCards];
 }
 
 -(void)dealTwoCardsForEachPlayer
@@ -111,26 +114,95 @@
         [twoCards addObject:[self.deck drawRandomCardAndRemoveItFromDeck]];
         
         player.cardsInTheHand = twoCards;
+        player.playerState = PlayerStateWaitingForTheirTurn;
+    }
+}
+
+
+-(void)updatePlayersWithCards
+{
+    [self.playersWithCards removeAllObjects];
+    for (Player* player in self.players)
+    {
+        if (player.playerState != PlayerStateWaitingNextHand)
+        {
+            [self.playersWithCards addObject:player];
+        }
     }
 }
 
 -(void)selectPreFlopActivePlayer
 {
     self.positionOfFirstPlayerWithDecision = 0;
+    NSUInteger smallBlindPosition = 1;
+    NSUInteger bigBlindPosition = 2;
+    
     if (self.players.count > 3)
     {
         self.positionOfFirstPlayerWithDecision = 3;//UTG position
     }
-    
-    for (Player* player in self.players)
+    else if(self.players.count == 2)
     {
+        smallBlindPosition = 0;
+        bigBlindPosition = 1;
+    }
+    
+    for (Player* player in self.playersWithCards)
+    {
+        if (player.sittingPositionRegardingToDealer == smallBlindPosition)
+        {
+            [self collectSmallBlindFromPlayer:player];
+        }else if (player.sittingPositionRegardingToDealer == bigBlindPosition)
+        {
+            [self collectBigBlindFromPlayer:player];
+        }
+        
         if (player.sittingPositionRegardingToDealer == self.positionOfFirstPlayerWithDecision)
         {
-            self.activePlayerWithDecision = player;
-            player.myTurn = YES;
+            if (player.playerState != PlayerStateAllIn)
+            {
+                self.activePlayerWithDecision = player;
+                player.playerState = PlayerStateMakingDecision;
+            }
+            else
+            {
+                [self activateNextPlayer];
+            }
         }
     }
 }
+
+-(void)collectSmallBlindFromPlayer:(Player*)paramPlayer
+{
+    if (self.smallBlind < paramPlayer.stack)
+    {
+        paramPlayer.stack -= self.smallBlind;
+        paramPlayer.amountBettedInThisRound = self.smallBlind;
+    }
+        else
+    {
+        paramPlayer.amountBettedInThisRound = paramPlayer.stack;
+        paramPlayer.stack = 0;
+        paramPlayer.playerState = PlayerStateAllIn;
+    }
+}
+
+-(void)collectBigBlindFromPlayer:(Player*)paramPlayer
+{
+    if (self.bigBlind < paramPlayer.stack)
+    {
+        paramPlayer.stack -= self.bigBlind;
+        paramPlayer.amountBettedInThisRound = self.bigBlind;
+    }
+    else
+    {
+        paramPlayer.amountBettedInThisRound = paramPlayer.stack;
+        paramPlayer.stack = 0;
+        paramPlayer.playerState = PlayerStateAllIn;
+    }
+}
+
+
 
 -(void)drawFlopCards
 {
@@ -155,40 +227,52 @@
     [self.communityCards addObject:riverCard];
 }
 
--(void)updateActivePlayers
-{
-    [self.playersWithCards removeAllObjects];
-    for (Player* player in self.players)
-    {
-        if (player.isNotFolded)
-        {
-            [self.playersWithCards addObject:player];
-        }
-    }
-}
-
 
 #pragma mark - betting round methods
 -(void)activateNextPlayer
 {
-    [self updateActivePlayers];
-    
+
     NSUInteger newActivePlayerPosition = self.activePlayerWithDecision.sittingPositionRegardingToDealer + 1;
-    if (newActivePlayerPosition > self.playersWithCards.count - 1)
+    if (newActivePlayerPosition > self.players.count - 1)
     {
         newActivePlayerPosition = 0;
     }
+    
     if (newActivePlayerPosition == self.positionOfFirstPlayerWithDecision)
     {
         [self.delegate performEndOfBettingRound];
     }
+    else
+    {
+        self.activePlayerWithDecision = [self returnPlayerWithCardsOnPosition:newActivePlayerPosition];
+        if (self.activePlayerWithDecision.playerState != PlayerStateWaitingForTheirTurn)
+        {
+            [self activateNextPlayer];
+        }
+    }
+}
+
+-(Player*)returnPlayerWithCardsOnPosition:(NSUInteger)paramPosition
+{
+    Player* playerObject;
+    for (Player* player in self.playersWithCards)
+    {
+        if (player.sittingPositionRegardingToDealer == paramPosition) {
+            playerObject = player;
+        }
+    }
+    return playerObject;
 }
 
 -(void)activePlayerChoseFold
 {
-    self.activePlayerWithDecision.notFolded = NO;
-    self.activePlayerWithDecision.myTurn = NO;
+    self.activePlayerWithDecision.playerState = PlayerStateWaitingNextHand;
+    self.pot += self.activePlayerWithDecision.amountBettedInThisRound;
     [self.playersWithCards removeObject:self.activePlayerWithDecision];
+    if (self.playersWithCards.count == 1)
+    {
+        [self lastManStandingIsTakingThePot];
+    }
 }
 
 -(void)activePlayerChoseCheck
@@ -218,4 +302,11 @@
     self.positionOfFirstPlayerWithDecision = self.activePlayerWithDecision.sittingPositionRegardingToDealer;
 }
 
+-(void)lastManStandingIsTakingThePot
+{
+    Player * player = [self.playersWithCards objectAtIndex:0];
+    player.stack += self.pot;
+    player.playerState = PlayerStateWaitingNextHand;
+    [self.delegate allOpponentsFolded];
+}
 @end

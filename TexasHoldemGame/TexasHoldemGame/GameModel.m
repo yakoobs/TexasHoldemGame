@@ -29,6 +29,7 @@ const NSUInteger kInitialChipsAmount = 1500;
     {
         _board = [[Board alloc] initWithPlayersNames:paramPlayersNames
                                         initialStack:kInitialChipsAmount
+                                          smallBlind:self.smallBlind
                                          andDelegate:self];
         
         [self setGameState:GameStateSettingPositions];
@@ -193,31 +194,40 @@ const NSUInteger kInitialChipsAmount = 1500;
 -(void)activePlayerChoseFold
 {
     [self.board activePlayerChoseFold];
+    [self activateNextPlayer];
 }
 
 -(void)activePlayerChoseCheck
 {
     [self.board activePlayerChoseCheck];
+    [self activateNextPlayer];
 }
 
 -(void)activePlayerChoseCall
 {
     [self.board activePlayerChoseCall];
+    [self activateNextPlayer];
+
 }
 
 -(void)activePlayerChoseBetWithTheAmountOf:(NSUInteger)paramAmount
 {
     [self.board activePlayerChoseBetWithTheAmountOf:(NSUInteger)paramAmount];
+    [self activateNextPlayer];
+
 }
 
 -(void)activePlayerChoseRaiseWithTheAmountOf:(NSUInteger)paramAmount
 {
     [self.board activePlayerChoseRaiseWithTheAmountOf:(NSUInteger)paramAmount];
+    [self activateNextPlayer];
+
 }
 
 -(void)activePlayerChoseAllIn
 {
     [self.board activePlayerChoseAllIn];
+    [self activateNextPlayer];
 }
 
 
@@ -245,5 +255,10 @@ const NSUInteger kInitialChipsAmount = 1500;
         default:
             break;
     }
+}
+
+-(void)allOpponentsFolded
+{
+    self.gameState = GameStateEndOfTheHand;
 }
 @end
