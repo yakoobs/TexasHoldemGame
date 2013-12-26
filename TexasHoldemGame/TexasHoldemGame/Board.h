@@ -79,6 +79,7 @@
  */
 -(void)startNewHand;
 -(void)selectPreFlopActivePlayer;
+-(void)selectPostFlopActivePlayer;
 
 -(void)drawFlopCards;
 -(void)drawTurnCard;

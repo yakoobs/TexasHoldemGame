@@ -139,6 +139,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 -(void)performFlopShownState
 {
     [self.board drawFlopCards];
+    [self.board selectPostFlopActivePlayer];
     
 }
 

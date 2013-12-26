@@ -47,7 +47,7 @@
     return self;
 }
 
-#pragma mark - getters
+#pragma mark - getters, lazy instatiation
 -(NSMutableArray*)players
 {
     if (!_players)
@@ -172,6 +172,25 @@
                 [self activateNextPlayer];
             }
         }
+    }
+}
+
+-(void)selectPostFlopActivePlayer
+{
+    self.positionOfFirstPlayerWithDecision = 1;
+
+    for (Player* player in self.playersWithCards)
+    {
+        BOOL playerCanMakeDecisionNow = (player.sittingPositionRegardingToDealer == self.positionOfFirstPlayerWithDecision) && (player.playerState == PlayerStateWaitingForTheirTurn);
+        if (playerCanMakeDecisionNow)
+        {
+            self.activePlayer = player;
+        }
+    }
+    
+    if (!self.activePlayer)
+    {
+        [self activateNextPlayer];
     }
 }
 
@@ -332,6 +351,8 @@
         self.pot += player.amountBettedInThisRound;
         player.amountBettedInThisRound = 0;
     }
+    self.betWasMade = NO;
+    self.amountOfChipsToCall = 0;
     [self.delegate performEndOfBettingRound];
 }
 @end
