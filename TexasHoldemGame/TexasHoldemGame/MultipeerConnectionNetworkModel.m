@@ -14,7 +14,7 @@ NSString* const kServiceType = @"THGameService";
 
 -(void)configureSessionDetails
 {
-    NSString* peerIDFromDeviceName = [UIDevice currentDevice].name;
+    NSString* peerIDFromDeviceName = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     self.peerID = [[MCPeerID alloc] initWithDisplayName:peerIDFromDeviceName];
     self.session = [[MCSession alloc] initWithPeer:self.peerID];
     self.session.delegate = self;
