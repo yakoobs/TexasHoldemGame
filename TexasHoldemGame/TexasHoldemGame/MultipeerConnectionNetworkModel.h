@@ -10,6 +10,7 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 extern NSString* const kServiceType;
+extern NSString* const kPlayerNameInfo;
 
 @interface MultipeerConnectionNetworkModel : NSObject<MCSessionDelegate>
 

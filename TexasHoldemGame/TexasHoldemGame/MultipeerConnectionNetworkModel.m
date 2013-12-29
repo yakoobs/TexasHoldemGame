@@ -9,6 +9,7 @@
 #import "MultipeerConnectionNetworkModel.h"
 
 NSString* const kServiceType = @"THGameService";
+NSString* const kPlayerNameInfo = @"tournamentName";
 
 @implementation MultipeerConnectionNetworkModel
 
@@ -38,7 +39,8 @@ NSString* const kServiceType = @"THGameService";
 - (void) session:(MCSession *)session
 didReceiveStream:(NSInputStream *)stream
         withName:(NSString *)streamName
-        fromPeer:(MCPeerID *)peerID{
+        fromPeer:(MCPeerID *)peerID
+{
     
 }
 

@@ -13,8 +13,9 @@
 -(void)hostGame
 {
     [super configureSessionDetails];
+    NSDictionary* infoDicitonary = @{kPlayerNameInfo: self.tournamentName};
     self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceType
-                                                                    discoveryInfo:nil
+                                                                    discoveryInfo:infoDicitonary
                                                                           session:self.session];
     self.advertiserAssistant.delegate = self;
     [self.advertiserAssistant start];
