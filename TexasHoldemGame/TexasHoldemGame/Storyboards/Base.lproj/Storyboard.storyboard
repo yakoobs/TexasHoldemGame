@@ -129,6 +129,9 @@
                                 <state key="normal" title="join_game_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="joinGameButtonPressed:" destination="xxR-N4-WOA" eventType="touchUpInside" id="cEW-0y-YVL"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9P8-R7-Mgt">
                                 <rect key="frame" x="142" y="133" width="284" height="160"/>
@@ -170,6 +173,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="availableHostsTableView" destination="9P8-R7-Mgt" id="5s5-Xs-DUK"/>
+                        <outlet property="joinGameButton" destination="XJn-vD-0Fu" id="FNU-DJ-Gba"/>
                         <outlet property="playerNicknameLabel" destination="FTc-Df-h99" id="4Ys-Y6-FmQ"/>
                     </connections>
                 </viewController>
@@ -318,6 +322,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Y8-Rx-3sW"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="numberOfPlayersLabel" destination="01E-x5-euJ" id="ctg-EB-Syy"/>
+                        <outlet property="playersTableView" destination="lJ3-Fg-IBT" id="pg2-vF-lhH"/>
+                        <outlet property="tournamentNameLabel" destination="bgB-mz-kZP" id="9V8-d0-QUO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENc-SE-FIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

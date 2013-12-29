@@ -9,7 +9,7 @@
 #import "JoinViewController.h"
 
 @interface JoinViewController ()
-
+@property NSUInteger selectedGameIndex;
 @end
 
 @implementation JoinViewController
@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self configureAvailableHostsTableView];
     [self configureJoiningNetworkModel];
+    self.joinGameButton.enabled = NO;
 }
 
 -(void)configureJoiningNetworkModel
@@ -55,6 +56,11 @@
 }
 
 #pragma mark - UITableViewDelegate methods
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedGameIndex = indexPath.row;
+    self.joinGameButton.enabled = YES;
+}
 
 #pragma mark - UITableViewDataSource methods
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,4 +80,9 @@
     return [self.joiningNetworkModel.availableHostsNames count];
 }
 
+- (IBAction)joinGameButtonPressed:(UIButton *)sender
+{
+    [self.joiningNetworkModel joinToSelectedHostAtIndex:self.selectedGameIndex];
+
+}
 @end

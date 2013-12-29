@@ -14,5 +14,8 @@
 @property (strong, nonatomic) JoiningNetworkModel* joiningNetworkModel;
 @property (weak, nonatomic) IBOutlet UITableView *availableHostsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *playerNicknameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *joinGameButton;
+
+- (IBAction)joinGameButtonPressed:(UIButton *)sender;
 
 @end

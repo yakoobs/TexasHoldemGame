@@ -12,6 +12,9 @@
 @interface WaitForOtherPlayersViewController : UIViewController
 
 @property (nonatomic,strong) HostNetworkModel* hostNetworkModel;
+@property (weak, nonatomic) IBOutlet UILabel *tournamentNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
+@property (weak, nonatomic) IBOutlet UITableView *playersTableView;
 
 -(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName;
 
