@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 WUT. All rights reserved.
 //
 
-#import "GameModel.h"
+#import "GameLogicModel.h"
 #import "Player.h"
 
 const NSUInteger kInitialChipsAmount = 1500;
 
-@interface GameModel()
+@interface GameLogicModel()
 
 @property(nonatomic) NSUInteger blindsLevel;
 
@@ -19,7 +19,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 
 
 
-@implementation GameModel
+@implementation GameLogicModel
 
 -(id)initWithPlayersNames:(NSArray*)paramPlayersNames
 {

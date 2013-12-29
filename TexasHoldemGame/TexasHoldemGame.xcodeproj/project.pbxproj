@@ -15,7 +15,7 @@
 		6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkModel.m */; };
 		6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB50183D72AB0083616C /* HostNetworkModel.m */; };
 		6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB53183D73F00083616C /* JoiningNetworkModel.m */; };
-		6A8D29BB186779AC00042C56 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BA186779AC00042C56 /* GameModel.m */; };
+		6A8D29BB186779AC00042C56 /* GameLogicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BA186779AC00042C56 /* GameLogicModel.m */; };
 		6A8D29BD1868593D00042C56 /* GameModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BC1868593D00042C56 /* GameModelTests.m */; };
 		6A920C251834249D00E7E685 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C241834249D00E7E685 /* Foundation.framework */; };
 		6A920C271834249D00E7E685 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A920C261834249D00E7E685 /* CoreGraphics.framework */; };
@@ -68,8 +68,8 @@
 		6A81AB50183D72AB0083616C /* HostNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostNetworkModel.m; sourceTree = "<group>"; };
 		6A81AB52183D73F00083616C /* JoiningNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoiningNetworkModel.h; sourceTree = "<group>"; };
 		6A81AB53183D73F00083616C /* JoiningNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoiningNetworkModel.m; sourceTree = "<group>"; };
-		6A8D29B9186779AC00042C56 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
-		6A8D29BA186779AC00042C56 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		6A8D29B9186779AC00042C56 /* GameLogicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogicModel.h; sourceTree = "<group>"; };
+		6A8D29BA186779AC00042C56 /* GameLogicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogicModel.m; sourceTree = "<group>"; };
 		6A8D29BC1868593D00042C56 /* GameModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModelTests.m; sourceTree = "<group>"; };
 		6A920C211834249D00E7E685 /* TexasHoldemGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TexasHoldemGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A920C241834249D00E7E685 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -291,8 +291,8 @@
 		6AACEE5B1860128500C2836B /* game logic */ = {
 			isa = PBXGroup;
 			children = (
-				6A8D29B9186779AC00042C56 /* GameModel.h */,
-				6A8D29BA186779AC00042C56 /* GameModel.m */,
+				6A8D29B9186779AC00042C56 /* GameLogicModel.h */,
+				6A8D29BA186779AC00042C56 /* GameLogicModel.m */,
 			);
 			name = "game logic";
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 				6AFA57CE18403F30003D8F33 /* Card.m in Sources */,
 				6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkModel.m in Sources */,
 				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
-				6A8D29BB186779AC00042C56 /* GameModel.m in Sources */,
+				6A8D29BB186779AC00042C56 /* GameLogicModel.m in Sources */,
 				6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */,
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6AFA57D1184040E3003D8F33 /* Deck.m in Sources */,

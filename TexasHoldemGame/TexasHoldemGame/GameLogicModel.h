@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, GameStateType)
     GameStateEndOfTournament
 };
 
-@interface GameModel : NSObject<BoardGameProtocol>
+@interface GameLogicModel : NSObject<BoardGameProtocol>
 
 @property(nonatomic,strong) Board* board;
 @property(nonatomic) GameStateType gameState;

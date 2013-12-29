@@ -7,14 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "GameModel.h"
+#import "GameLogicModel.h"
 
 @interface GameModelTests : XCTestCase
 
-@property(nonatomic, strong) GameModel* gameModel2;
-@property(nonatomic, strong) GameModel* gameModel3;
-@property(nonatomic, strong) GameModel* gameModel4;
-@property(nonatomic, strong) GameModel* gameModel6;
+@property(nonatomic, strong) GameLogicModel* gameModel2;
+@property(nonatomic, strong) GameLogicModel* gameModel3;
+@property(nonatomic, strong) GameLogicModel* gameModel4;
+@property(nonatomic, strong) GameLogicModel* gameModel6;
 
 @end
 
@@ -36,26 +36,26 @@
 -(void)createGameModelWithTwoPlayers
 {
     NSArray* playerNames = @[ @"player1", @"player2"];
-    self.gameModel2 = [[GameModel alloc]initWithPlayersNames:playerNames];
+    self.gameModel2 = [[GameLogicModel alloc]initWithPlayersNames:playerNames];
 }
 
 -(void)createGameModelWithThreePlayers
 {
     NSArray* playerNames = @[ @"player1", @"player2", @"player3"];
-    self.gameModel3 = [[GameModel alloc]initWithPlayersNames:playerNames];
+    self.gameModel3 = [[GameLogicModel alloc]initWithPlayersNames:playerNames];
 }
 
 -(void)createGameModelWithFourPlayers
 {
     NSArray* playerNames = @[ @"player1", @"player2", @"player3", @"player4"];
-    self.gameModel4 = [[GameModel alloc]initWithPlayersNames:playerNames];
+    self.gameModel4 = [[GameLogicModel alloc]initWithPlayersNames:playerNames];
 }
 
 
 -(void)createGameModelWithSixPlayers
 {
     NSArray* playerNames = @[ @"player1", @"player2", @"player3", @"player4", @"player5", @"player6" ];
-    self.gameModel6 = [[GameModel alloc]initWithPlayersNames:playerNames];
+    self.gameModel6 = [[GameLogicModel alloc]initWithPlayersNames:playerNames];
 }
 
 
