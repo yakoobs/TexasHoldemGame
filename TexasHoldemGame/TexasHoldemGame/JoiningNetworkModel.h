@@ -26,4 +26,6 @@
  */
 -(void)startHostsSearching;
 
+-(void)joinToSelectedHostAtIndex:(NSUInteger)paramIndex;
+
 @end
