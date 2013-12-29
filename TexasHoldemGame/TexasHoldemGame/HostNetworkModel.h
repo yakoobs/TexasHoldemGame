@@ -8,7 +8,7 @@
 
 #import "MultipeerConnectionNetworkModel.h"
 
-@interface HostNetworkModel : MultipeerConnectionNetworkModel
+@interface HostNetworkModel : MultipeerConnectionNetworkModel<MCAdvertiserAssistantDelegate>
 
 @property (nonatomic, copy) NSString* tournamentName;
 @property (nonatomic, strong) MCAdvertiserAssistant* advertiserAssistant;
