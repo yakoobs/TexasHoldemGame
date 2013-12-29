@@ -71,13 +71,13 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:kCellIdentifier];
     }
-    cell.textLabel.text = [self.joiningNetworkModel.availableHostsNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.joiningNetworkModel.availableTournamentsNames objectAtIndex:indexPath.row];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.joiningNetworkModel.availableHostsNames count];
+    return [self.joiningNetworkModel.availableTournamentsNames count];
 }
 
 - (IBAction)joinGameButtonPressed:(UIButton *)sender

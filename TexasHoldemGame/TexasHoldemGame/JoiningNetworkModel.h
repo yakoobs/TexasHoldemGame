@@ -16,7 +16,7 @@
 @interface JoiningNetworkModel : MultipeerConnectionNetworkModel<MCNearbyServiceBrowserDelegate>
 
 @property (nonatomic, strong) MCNearbyServiceBrowser* nearbyServiceBrowser;
-@property (nonatomic, strong) NSMutableArray* availableHostsNames;
+@property (nonatomic, strong) NSMutableArray* availableTournamentsNames;
 @property (nonatomic, weak) id <JoiningNetworkModelProtocol> delegate;
 
 

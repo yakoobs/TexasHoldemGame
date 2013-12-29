@@ -8,7 +8,7 @@
 
 #import "JoiningNetworkModel.h"
 @interface JoiningNetworkModel()
-@property (nonatomic, strong)NSMutableArray * peers;
+@property (nonatomic, strong)NSMutableArray * availablePeers;
 @end
 
 @implementation JoiningNetworkModel
@@ -22,20 +22,20 @@
     [self.nearbyServiceBrowser startBrowsingForPeers];
 }
 
--(NSMutableArray*)availableHostsNames
+-(NSMutableArray*)availableTournamentsNames
 {
-    if (!_availableHostsNames) {
-        _availableHostsNames = [[NSMutableArray alloc]init];
+    if (!_availableTournamentsNames) {
+        _availableTournamentsNames = [[NSMutableArray alloc]init];
     }
-    return _availableHostsNames;
+    return _availableTournamentsNames;
 }
 
--(NSMutableArray*)peers
+-(NSMutableArray*)availablePeers
 {
-    if (!_peers) {
-        _peers = [[NSMutableArray alloc]init];
+    if (!_availablePeers) {
+        _availablePeers = [[NSMutableArray alloc]init];
     }
-    return _peers;
+    return _availablePeers;
 }
 
 #pragma mark - MCNearbyServiceBrowserDelegate methods
@@ -44,8 +44,8 @@
      foundPeer:(MCPeerID *)peerID
 withDiscoveryInfo:(NSDictionary *)info
 {
-    [self.peers addObject:peerID];
-    [self.availableHostsNames addObject:peerID.displayName];
+    [self.availablePeers addObject:peerID];
+    [self.availableTournamentsNames addObject:[info objectForKey:kPlayerNameInfo]];
     [self.delegate listOfAvailableHostsDidChange];
 
 }
@@ -54,15 +54,9 @@ withDiscoveryInfo:(NSDictionary *)info
 -(void)browser:(MCNearbyServiceBrowser *)browser
       lostPeer:(MCPeerID *)peerID
 {
-    for (NSString* peerName in self.availableHostsNames)
-    {
-        if ([peerName isEqualToString:peerID.displayName])
-        {
-            [self.availableHostsNames removeObject:peerName];
-            break;
-        }
-    }
-    [self.peers removeObject:peerID];
+    NSUInteger index = [self.availablePeers indexOfObject:peerID];
+    [self.availableTournamentsNames removeObjectAtIndex:index];
+    [self.availablePeers removeObject:peerID];
     [self.delegate listOfAvailableHostsDidChange];
 }
 
@@ -76,7 +70,7 @@ withDiscoveryInfo:(NSDictionary *)info
 -(void)joinToSelectedHostAtIndex:(NSUInteger)paramIndex
 {
     const NSTimeInterval connectionTimeout = 10;
-    [self.nearbyServiceBrowser invitePeer:[self.peers objectAtIndex:paramIndex]
+    [self.nearbyServiceBrowser invitePeer:[self.availablePeers objectAtIndex:paramIndex]
                                 toSession:self.session
                               withContext:nil
                                   timeout:connectionTimeout];
