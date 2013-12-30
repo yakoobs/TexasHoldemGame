@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UITableView *playersTableView;
 
--(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName;
+-(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName
+                   andTournamentName:(NSString*)paramTournamentName;
 
 @end

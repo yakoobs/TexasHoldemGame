@@ -24,7 +24,8 @@
     [self.hostNetworkModel hostGame];
 }
 
--(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName andTournamentName:(NSString*)paramTournamentName
+-(void)setHostNetworkModelPlayerName:(NSString*)paramPlayerName
+                   andTournamentName:(NSString*)paramTournamentName
 {
         self.hostNetworkModel.playerName = paramPlayerName;
         self.hostNetworkModel.tournamentName = paramTournamentName;

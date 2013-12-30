@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 WUT. All rights reserved.
 //
 
-#import "MultipeerConnectionNetworkModel.h"
+#import "MultipeerConnectionNetworkBaseModel.h"
 
 NSString* const kServiceType = @"THGameService";
 NSString* const kPlayerNameInfo = @"tournamentName";
 
-@implementation MultipeerConnectionNetworkModel
+@implementation MultipeerConnectionNetworkBaseModel
 
 -(void)configureSessionDetails
 {

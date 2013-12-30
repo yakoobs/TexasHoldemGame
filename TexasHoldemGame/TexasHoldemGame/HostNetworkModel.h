@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 WUT. All rights reserved.
 //
 
-#import "MultipeerConnectionNetworkModel.h"
+#import "MultipeerConnectionNetworkBaseModel.h"
 
-@interface HostNetworkModel : MultipeerConnectionNetworkModel<MCAdvertiserAssistantDelegate>
+@interface HostNetworkModel : MultipeerConnectionNetworkBaseModel<MCAdvertiserAssistantDelegate>
 
 @property (nonatomic, copy) NSString* tournamentName;
 @property (nonatomic, strong) MCAdvertiserAssistant* advertiserAssistant;

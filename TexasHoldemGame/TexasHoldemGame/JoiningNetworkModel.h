@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 WUT. All rights reserved.
 //
 
-#import "MultipeerConnectionNetworkModel.h"
+#import "MultipeerConnectionNetworkBaseModel.h"
 
 @protocol JoiningNetworkModelProtocol <NSObject>
 
 -(void)listOfAvailableHostsDidChange;
 
 @end
-@interface JoiningNetworkModel : MultipeerConnectionNetworkModel<MCNearbyServiceBrowserDelegate>
+@interface JoiningNetworkModel : MultipeerConnectionNetworkBaseModel<MCNearbyServiceBrowserDelegate>
 
 @property (nonatomic, strong) MCNearbyServiceBrowser* nearbyServiceBrowser;
 @property (nonatomic, strong) NSMutableArray* availableTournamentsNames;

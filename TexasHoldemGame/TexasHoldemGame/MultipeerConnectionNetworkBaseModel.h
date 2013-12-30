@@ -12,7 +12,7 @@
 extern NSString* const kServiceType;
 extern NSString* const kPlayerNameInfo;
 
-@interface MultipeerConnectionNetworkModel : NSObject<MCSessionDelegate>
+@interface MultipeerConnectionNetworkBaseModel : NSObject<MCSessionDelegate>
 
 @property (nonatomic, strong) MCSession* session;
 @property (nonatomic, strong) MCPeerID* peerID;
