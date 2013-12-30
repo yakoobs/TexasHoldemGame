@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0BC9451871921300C23DF8 /* ComunicationWithPacketsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BC9441871921200C23DF8 /* ComunicationWithPacketsModel.m */; };
 		6A28A439184B6E5D0081D764 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28A438184B6E5D0081D764 /* Board.m */; };
 		6A28A43C184B6F570081D764 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28A43B184B6F570081D764 /* Player.m */; };
 		6A6925A71840D2310025DC5D /* CardCombination.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A61840D2310025DC5D /* CardCombination.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A0BC9431871921200C23DF8 /* ComunicationWithPacketsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComunicationWithPacketsModel.h; sourceTree = "<group>"; };
+		6A0BC9441871921200C23DF8 /* ComunicationWithPacketsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComunicationWithPacketsModel.m; sourceTree = "<group>"; };
 		6A28A437184B6E5D0081D764 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		6A28A438184B6E5D0081D764 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		6A28A43A184B6F570081D764 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				6A81AB50183D72AB0083616C /* HostNetworkModel.m */,
 				6A81AB52183D73F00083616C /* JoiningNetworkModel.h */,
 				6A81AB53183D73F00083616C /* JoiningNetworkModel.m */,
+				6A0BC9431871921200C23DF8 /* ComunicationWithPacketsModel.h */,
+				6A0BC9441871921200C23DF8 /* ComunicationWithPacketsModel.m */,
 			);
 			name = "multipeer connection";
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				6A920C7518343EC400E7E685 /* SettingsViewController.m in Sources */,
 				6AFA57D1184040E3003D8F33 /* Deck.m in Sources */,
 				6A920C6C183435BE00E7E685 /* MenuViewController.m in Sources */,
+				6A0BC9451871921300C23DF8 /* ComunicationWithPacketsModel.m in Sources */,
 				6A920C7818343ED500E7E685 /* InfoViewController.m in Sources */,
 				6A6925A71840D2310025DC5D /* CardCombination.m in Sources */,
 				6AC312051835AAAF0078C2BB /* LoadingGameSettingsViewController.m in Sources */,
