@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, PlayerOnTableState)
 
 @interface Player : NSObject
 
-@property (nonatomic, strong) NSString* uniqueID;
+@property (nonatomic) NSUInteger uniqueID;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSArray* cardsInTheHand;
 @property NSUInteger stack;
