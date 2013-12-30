@@ -7,6 +7,7 @@
 //
 
 #import "WaitForOtherPlayersViewController.h"
+#import "LoadingGameSettingsViewController.h"
 
 @interface WaitForOtherPlayersViewController ()
 
@@ -40,4 +41,15 @@
     return _hostNetworkModel;
 }
 
+#pragma mark - Push LoadingGameSettingsViewController with segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    static NSString* const kPushHostLoadingGameSettingsVC = @"PushHostLoadingGameSettingsVC";
+    if ([segue.identifier isEqualToString:kPushHostLoadingGameSettingsVC])
+    {
+        LoadingGameSettingsViewController* loadingGameSettingsVC = (LoadingGameSettingsViewController*)segue.destinationViewController;
+   //TODO: initialize LoadingGameSettings VC properties.
+    }
+}
 @end

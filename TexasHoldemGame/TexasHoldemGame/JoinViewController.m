@@ -7,6 +7,7 @@
 //
 
 #import "JoinViewController.h"
+#import "LoadingGameSettingsViewController.h"
 
 @interface JoinViewController ()
 @property NSUInteger selectedGameIndex;
@@ -83,6 +84,17 @@
 - (IBAction)joinGameButtonPressed:(UIButton *)sender
 {
     [self.joiningNetworkModel joinToSelectedHostAtIndex:self.selectedGameIndex];
+}
 
+#pragma mark - Push LoadingGameSettingsViewController with segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    static NSString* const kPushJoinVCLoadingGameSettingsVC = @"PushJoinVCLoadingGameSettingsVC";
+    if ([segue.identifier isEqualToString:kPushJoinVCLoadingGameSettingsVC])
+    {
+        LoadingGameSettingsViewController* loadingGameSettingsVC = (LoadingGameSettingsViewController*)segue.destinationViewController;
+        //TODO: initialize LoadingGameSettings VC properties.
+    }
 }
 @end

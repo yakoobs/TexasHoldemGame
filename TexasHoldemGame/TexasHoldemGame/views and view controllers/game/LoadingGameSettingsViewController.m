@@ -7,6 +7,7 @@
 //
 
 #import "LoadingGameSettingsViewController.h"
+#import "MainBoardViewController.h"
 
 @interface LoadingGameSettingsViewController ()
 
@@ -34,5 +35,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Push MainBoardViewController with segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    static NSString* const kPushMainBoardVC = @"PushMainBoardVC";
+    if ([segue.identifier isEqualToString:kPushMainBoardVC])
+    {
+        MainBoardViewController* loadingGameSettingsVC = (MainBoardViewController*)segue.destinationViewController;
+        //TODO: initialize MainBoardViewController properties.
+    }
+}
+
 
 @end
