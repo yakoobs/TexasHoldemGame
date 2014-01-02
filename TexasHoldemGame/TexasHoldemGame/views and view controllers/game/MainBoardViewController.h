@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameLogicModel.h"
 
 @interface MainBoardViewController : UIViewController
+@property (nonatomic,strong) GameLogicModel* gameLogicModel;
 
 @end
