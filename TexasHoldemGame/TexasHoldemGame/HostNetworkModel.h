@@ -8,11 +8,18 @@
 
 #import "MultipeerConnectionNetworkBaseModel.h"
 
-@interface HostNetworkModel : MultipeerConnectionNetworkBaseModel<MCAdvertiserAssistantDelegate>
+@protocol HostNetworkModelProtocol <NSObject>
+
+-(void)updateListOfPlayers;
+
+@end
+
+@interface HostNetworkModel : MultipeerConnectionNetworkBaseModel<MCNearbyServiceAdvertiserDelegate>
 
 @property (nonatomic, copy) NSString* tournamentName;
-@property (nonatomic, strong) MCAdvertiserAssistant* advertiserAssistant;
-
+@property (nonatomic, strong) MCNearbyServiceAdvertiser* advertiserAssistant;
+@property (nonatomic, strong) NSMutableArray* playersNames;
+@property (nonatomic, weak) id<HostNetworkModelProtocol> delegate;
 
 /**
  * Initiates HostNetworkModel properties: MCPeerID, MCSession, MCAdvertiserAssistant objects.

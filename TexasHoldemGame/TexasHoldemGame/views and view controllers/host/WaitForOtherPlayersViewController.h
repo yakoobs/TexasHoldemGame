@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HostNetworkModel.h"
 
-@interface WaitForOtherPlayersViewController : UIViewController
+@interface WaitForOtherPlayersViewController : UIViewController<HostNetworkModelProtocol>
 
 @property (nonatomic,strong) HostNetworkModel* hostNetworkModel;
 @property (weak, nonatomic) IBOutlet UILabel *tournamentNameLabel;

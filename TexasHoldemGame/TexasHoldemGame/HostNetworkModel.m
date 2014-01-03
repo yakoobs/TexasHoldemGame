@@ -8,30 +8,61 @@
 
 #import "HostNetworkModel.h"
 
-@implementation HostNetworkModel
+@interface HostNetworkModel()
+@property (nonatomic) NSUInteger numberOfPlayers;
+@property (nonatomic,strong) NSMutableArray* playersPeerNames;
+@end
 
+@implementation HostNetworkModel
+-(NSMutableArray*)playersNames
+{
+    if (!_playersNames) {
+        _playersNames = [[NSMutableArray alloc]init];
+    }
+    return _playersNames;
+}
+
+-(NSMutableArray*)playersPeerNames
+{
+    if (!_playersPeerNames) {
+        _playersPeerNames = [[NSMutableArray alloc] init];
+    }
+    return _playersPeerNames;
+}
 -(void)hostGame
 {
     [super configureSessionDetails];
     NSDictionary* infoDicitonary = @{kPlayerNameInfo: self.tournamentName};
-    self.advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceType
-                                                                    discoveryInfo:infoDicitonary
-                                                                          session:self.session];
+    self.advertiserAssistant = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID
+                                                                 discoveryInfo:infoDicitonary
+                                                                   serviceType:kServiceType];
     self.advertiserAssistant.delegate = self;
-    [self.advertiserAssistant start];
+    [self.advertiserAssistant startAdvertisingPeer];
 }
 
-#pragma mark - MCAdvertiserAssistantDelegate methods
-
-- (void)advertiserAssitantWillPresentInvitation:(MCAdvertiserAssistant *)advertiserAssistant
+#pragma mark - MCNearbyServiceAdvertiserDelegate methods
+- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID
+       withContext:(NSData *)context
+ invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
 {
-    NSLog(@"I've got an invitation");
+    if (self.numberOfPlayers < 6)
+    {
+        invitationHandler(YES,self.session);
+        
+        [self.playersPeerNames addObject:peerID];
+        
+        NSString* newPlayerName = [[NSString alloc]initWithData:context encoding:NSUTF8StringEncoding];
+        [self.playersNames addObject:newPlayerName];
+        [self.delegate updateListOfPlayers];
+    }
+    else
+    {
+        invitationHandler(NO,self.session);
+    }
 }
-
-
--(void)dealloc
+- (void)dealloc
 {
-    [self.advertiserAssistant stop];
+    [self.advertiserAssistant stopAdvertisingPeer];
     [self.session disconnect];
 }
 @end

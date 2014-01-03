@@ -328,6 +328,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="numberOfPlayersLabel" destination="01E-x5-euJ" id="ctg-EB-Syy"/>
+                        <outlet property="playersListTableView" destination="lJ3-Fg-IBT" id="0PV-XJ-2eI"/>
                         <outlet property="playersTableView" destination="lJ3-Fg-IBT" id="pg2-vF-lhH"/>
                         <outlet property="tournamentNameLabel" destination="bgB-mz-kZP" id="9V8-d0-QUO"/>
                     </connections>
