@@ -69,10 +69,11 @@ withDiscoveryInfo:(NSDictionary *)info
 #pragma mark - Connect to selected host methods
 -(void)joinToSelectedHostAtIndex:(NSUInteger)paramIndex
 {
+    NSData* context = [self.playerName dataUsingEncoding:NSUTF8StringEncoding];
     const NSTimeInterval connectionTimeout = 10;
     [self.nearbyServiceBrowser invitePeer:[self.availablePeers objectAtIndex:paramIndex]
                                 toSession:self.session
-                              withContext:nil
+                              withContext:context
                                   timeout:connectionTimeout];
 }
 
