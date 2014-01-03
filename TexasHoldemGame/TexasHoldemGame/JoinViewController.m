@@ -44,11 +44,6 @@
     self.availableHostsTableView.delegate = self;
     self.availableHostsTableView.dataSource = self;
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - JoiningNetworkModelProtocol
 -(void)listOfAvailableHostsDidChange

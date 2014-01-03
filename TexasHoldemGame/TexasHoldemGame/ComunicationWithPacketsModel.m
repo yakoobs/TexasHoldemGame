@@ -1,5 +1,5 @@
 //
-//  GameNetworkModel.m
+//  ComunicationWithPacketsModel
 //  TexasHoldemGame
 //
 //  Created by Jakub Sokolowski on 30/12/2013.
@@ -17,8 +17,9 @@
     
 }
 
--(void)sendInfoToAllPlayersWithType:(MessageType)paramType
-                          andObject:(id)paramObject
+-(void)sendInfoToPlayersWithUniqueIDs:(NSArray*)paramUniqueIDs
+                             WithType:(MessageType)paramType
+                            andObject:(id)paramObject
 {
     
 }

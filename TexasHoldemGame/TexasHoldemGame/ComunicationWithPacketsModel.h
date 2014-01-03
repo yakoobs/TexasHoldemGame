@@ -1,5 +1,5 @@
 //
-//  GameNetworkModel.h
+//  ComunicationWithPacketsModel
 //  TexasHoldemGame
 //
 //  Created by Jakub Sokolowski on 30/12/2013.
@@ -25,7 +25,8 @@ typedef NS_ENUM(NSUInteger, MessageType) {
                            withType:(MessageType)paramType
                           andObject:(id)paramObject;
 
--(void)sendInfoToAllPlayersWithType:(MessageType)paramType
-                          andObject:(id)paramObject;
+-(void)sendInfoToPlayersWithUniqueIDs:(NSArray*)paramUniqueIDs
+                             WithType:(MessageType)paramType
+                            andObject:(id)paramObject;
 
 @end
