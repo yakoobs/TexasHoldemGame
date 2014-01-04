@@ -12,7 +12,7 @@
 extern NSString* const kServiceType;
 extern NSString* const kPlayerNameInfo;
 
-@interface MultipeerConnectionNetworkBaseModel : NSObject<MCSessionDelegate>
+@interface GameNetworkModel : NSObject<MCSessionDelegate>
 
 @property (nonatomic) NSUInteger numberOfPlayers;
 @property (nonatomic,strong) NSMutableArray* playersPeerNames;
@@ -20,6 +20,7 @@ extern NSString* const kPlayerNameInfo;
 @property (nonatomic, strong) MCSession* session;
 @property (nonatomic, strong) MCPeerID* peerID;
 @property (nonatomic, copy) NSString* playerName;
+@property (nonatomic,strong) MCPeerID* serverPeerId;
 
 /**
 * Responsible for initialisation MCSession and MCPeerID properties. MCSession instance's delegate is assigned to self.

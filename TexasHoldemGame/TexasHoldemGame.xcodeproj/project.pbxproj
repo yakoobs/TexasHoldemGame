@@ -13,7 +13,7 @@
 		6A6925A71840D2310025DC5D /* CardCombination.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A61840D2310025DC5D /* CardCombination.m */; };
 		6A6925A9184260390025DC5D /* CardCombinationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6925A8184260390025DC5D /* CardCombinationTest.m */; };
 		6A81AB4A183D67610083616C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A81AB49183D67610083616C /* MultipeerConnectivity.framework */; };
-		6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkBaseModel.m */; };
+		6A81AB4E183D67A80083616C /* GameNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB4D183D67A80083616C /* GameNetworkModel.m */; };
 		6A81AB51183D72AB0083616C /* HostNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB50183D72AB0083616C /* HostNetworkModel.m */; };
 		6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AB53183D73F00083616C /* JoiningNetworkModel.m */; };
 		6A8D29BB186779AC00042C56 /* GameLogicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D29BA186779AC00042C56 /* GameLogicModel.m */; };
@@ -65,8 +65,8 @@
 		6A6925A61840D2310025DC5D /* CardCombination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombination.m; sourceTree = "<group>"; };
 		6A6925A8184260390025DC5D /* CardCombinationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCombinationTest.m; sourceTree = "<group>"; };
 		6A81AB49183D67610083616C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
-		6A81AB4C183D67A80083616C /* MultipeerConnectionNetworkBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectionNetworkBaseModel.h; sourceTree = "<group>"; };
-		6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectionNetworkBaseModel.m; sourceTree = "<group>"; };
+		6A81AB4C183D67A80083616C /* GameNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNetworkModel.h; sourceTree = "<group>"; };
+		6A81AB4D183D67A80083616C /* GameNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNetworkModel.m; sourceTree = "<group>"; };
 		6A81AB4F183D72AB0083616C /* HostNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostNetworkModel.h; sourceTree = "<group>"; };
 		6A81AB50183D72AB0083616C /* HostNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostNetworkModel.m; sourceTree = "<group>"; };
 		6A81AB52183D73F00083616C /* JoiningNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoiningNetworkModel.h; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		6A81AB55183D74580083616C /* multipeer connection */ = {
 			isa = PBXGroup;
 			children = (
-				6A81AB4C183D67A80083616C /* MultipeerConnectionNetworkBaseModel.h */,
-				6A81AB4D183D67A80083616C /* MultipeerConnectionNetworkBaseModel.m */,
+				6A81AB4C183D67A80083616C /* GameNetworkModel.h */,
+				6A81AB4D183D67A80083616C /* GameNetworkModel.m */,
 				6A81AB4F183D72AB0083616C /* HostNetworkModel.h */,
 				6A81AB50183D72AB0083616C /* HostNetworkModel.m */,
 				6A81AB52183D73F00083616C /* JoiningNetworkModel.h */,
@@ -454,7 +454,7 @@
 				6A920C351834249D00E7E685 /* AppDelegate.m in Sources */,
 				6A81AB54183D73F00083616C /* JoiningNetworkModel.m in Sources */,
 				6AFA57CE18403F30003D8F33 /* Card.m in Sources */,
-				6A81AB4E183D67A80083616C /* MultipeerConnectionNetworkBaseModel.m in Sources */,
+				6A81AB4E183D67A80083616C /* GameNetworkModel.m in Sources */,
 				6A920C7218343EB500E7E685 /* JoinViewController.m in Sources */,
 				6A8D29BB186779AC00042C56 /* GameLogicModel.m in Sources */,
 				6AC311FB1835893B0078C2BB /* WaitForOtherPlayersViewController.m in Sources */,

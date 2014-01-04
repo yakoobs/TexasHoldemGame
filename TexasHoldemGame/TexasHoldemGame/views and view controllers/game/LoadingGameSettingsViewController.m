@@ -8,6 +8,7 @@
 
 #import "LoadingGameSettingsViewController.h"
 #import "MainBoardViewController.h"
+#import "GameLogicModel.h"
 
 @interface LoadingGameSettingsViewController ()
 
@@ -29,8 +30,8 @@
     static NSString* const kPushMainBoardVC = @"PushMainBoardVC";
     if ([segue.identifier isEqualToString:kPushMainBoardVC])
     {
-        MainBoardViewController* loadingGameSettingsVC = (MainBoardViewController*)segue.destinationViewController;
-        //TODO: initialize MainBoardViewController properties.
+        MainBoardViewController* mainBoardVC = (MainBoardViewController*)segue.destinationViewController;
+        mainBoardVC.gameLogicModel = [[GameLogicModel alloc]initWithPlayersNames:self.networkModel.playersNames];
     }
 }
 

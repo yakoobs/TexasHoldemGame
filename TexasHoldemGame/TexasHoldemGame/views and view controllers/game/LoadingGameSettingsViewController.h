@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameNetworkModel.h"
 
 @interface LoadingGameSettingsViewController : UIViewController
-
+@property (nonatomic,strong) GameNetworkModel * networkModel;
 @end

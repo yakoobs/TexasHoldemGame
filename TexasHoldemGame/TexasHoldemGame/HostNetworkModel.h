@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 WUT. All rights reserved.
 //
 
-#import "MultipeerConnectionNetworkBaseModel.h"
+#import "GameNetworkModel.h"
 
 @protocol HostNetworkModelProtocol <NSObject>
 
@@ -14,7 +14,7 @@
 
 @end
 
-@interface HostNetworkModel : MultipeerConnectionNetworkBaseModel<MCNearbyServiceAdvertiserDelegate>
+@interface HostNetworkModel : GameNetworkModel<MCNearbyServiceAdvertiserDelegate>
 
 @property (nonatomic, copy) NSString* tournamentName;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser* advertiserAssistant;
