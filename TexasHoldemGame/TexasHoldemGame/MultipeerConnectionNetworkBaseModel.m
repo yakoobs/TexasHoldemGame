@@ -21,6 +21,14 @@ NSString* const kPlayerNameInfo = @"tournamentName";
     self.session.delegate = self;
 }
 
+-(NSMutableArray*)playersNames
+{
+    if (!_playersNames) {
+        _playersNames = [[NSMutableArray alloc]init];
+    }
+    return _playersNames;
+}
+
 #pragma mark - MCSessionDelegate methods
 - (void)session:(MCSession *)session
            peer:(MCPeerID *)peerID

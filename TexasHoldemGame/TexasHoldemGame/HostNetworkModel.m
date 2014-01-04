@@ -14,13 +14,6 @@
 @end
 
 @implementation HostNetworkModel
--(NSMutableArray*)playersNames
-{
-    if (!_playersNames) {
-        _playersNames = [[NSMutableArray alloc]init];
-    }
-    return _playersNames;
-}
 
 -(NSMutableArray*)playersPeerNames
 {

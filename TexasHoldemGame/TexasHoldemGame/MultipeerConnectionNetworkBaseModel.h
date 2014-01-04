@@ -14,6 +14,7 @@ extern NSString* const kPlayerNameInfo;
 
 @interface MultipeerConnectionNetworkBaseModel : NSObject<MCSessionDelegate>
 
+@property (nonatomic, strong) NSMutableArray* playersNames;
 @property (nonatomic, strong) MCSession* session;
 @property (nonatomic, strong) MCPeerID* peerID;
 @property (nonatomic, copy) NSString* playerName;

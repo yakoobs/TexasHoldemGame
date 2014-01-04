@@ -18,7 +18,6 @@
 
 @property (nonatomic, copy) NSString* tournamentName;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser* advertiserAssistant;
-@property (nonatomic, strong) NSMutableArray* playersNames;
 @property (nonatomic, weak) id<HostNetworkModelProtocol> delegate;
 
 /**
