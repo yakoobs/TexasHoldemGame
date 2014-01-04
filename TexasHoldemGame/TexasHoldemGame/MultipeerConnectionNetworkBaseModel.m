@@ -21,6 +21,19 @@ NSString* const kPlayerNameInfo = @"tournamentName";
     self.session.delegate = self;
 }
 
+-(NSUInteger)numberOfPlayers
+{
+    return self.playersNames.count;
+}
+
+-(NSMutableArray*)playersPeerNames
+{
+    if (!_playersPeerNames) {
+        _playersPeerNames = [[NSMutableArray alloc] init];
+    }
+    return _playersPeerNames;
+}
+
 -(NSMutableArray*)playersNames
 {
     if (!_playersNames) {

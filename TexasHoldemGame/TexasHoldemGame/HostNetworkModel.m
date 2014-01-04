@@ -9,19 +9,11 @@
 #import "HostNetworkModel.h"
 
 @interface HostNetworkModel()
-@property (nonatomic) NSUInteger numberOfPlayers;
-@property (nonatomic,strong) NSMutableArray* playersPeerNames;
+
 @end
 
 @implementation HostNetworkModel
 
--(NSMutableArray*)playersPeerNames
-{
-    if (!_playersPeerNames) {
-        _playersPeerNames = [[NSMutableArray alloc] init];
-    }
-    return _playersPeerNames;
-}
 -(void)hostGame
 {
     [super configureSessionDetails];
