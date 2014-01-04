@@ -70,8 +70,9 @@ withDiscoveryInfo:(NSDictionary *)info
 -(void)joinToSelectedHostAtIndex:(NSUInteger)paramIndex
 {
     NSData* context = [self.playerName dataUsingEncoding:NSUTF8StringEncoding];
+    self.serverPeerId = [self.availablePeers objectAtIndex:paramIndex];
     const NSTimeInterval connectionTimeout = 10;
-    [self.nearbyServiceBrowser invitePeer:[self.availablePeers objectAtIndex:paramIndex]
+    [self.nearbyServiceBrowser invitePeer:self.serverPeerId
                                 toSession:self.session
                               withContext:context
                                   timeout:connectionTimeout];
