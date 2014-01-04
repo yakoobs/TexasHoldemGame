@@ -16,8 +16,6 @@
 
 @implementation LoadingGameSettingsViewController
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,7 +29,7 @@
     if ([segue.identifier isEqualToString:kPushMainBoardVC])
     {
         MainBoardViewController* mainBoardVC = (MainBoardViewController*)segue.destinationViewController;
-        mainBoardVC.gameLogicModel = [[GameLogicModel alloc]initWithPlayersNames:self.networkModel.playersNames];
+        mainBoardVC.logicModel = [[GameLogicModel alloc]initWithPlayersNames:self.networkModel.playersNames];
     }
 }
 

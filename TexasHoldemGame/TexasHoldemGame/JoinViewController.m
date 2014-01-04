@@ -30,7 +30,13 @@
     [super viewDidLoad];
     [self configureAvailableHostsTableView];
     [self configureJoiningNetworkModel];
+    [self configurePlayerNicknameLabel];
     self.joinGameButton.enabled = NO;
+}
+
+-(void)configurePlayerNicknameLabel
+{
+    self.playerNicknameLabel.text = [[UIDevice currentDevice] name];
 }
 
 -(void)configureJoiningNetworkModel
@@ -78,6 +84,7 @@
 
 - (IBAction)joinGameButtonPressed:(UIButton *)sender
 {
+    self.joiningNetworkModel.playerName = self.playerNicknameLabel.text;
     [self.joiningNetworkModel joinToSelectedHostAtIndex:self.selectedGameIndex];
 }
 
@@ -89,7 +96,7 @@
     if ([segue.identifier isEqualToString:kPushJoinVCLoadingGameSettingsVC])
     {
         LoadingGameSettingsViewController* loadingGameSettingsVC = (LoadingGameSettingsViewController*)segue.destinationViewController;
-        //TODO: initialize LoadingGameSettings VC properties.
+        loadingGameSettingsVC.networkModel = self.joiningNetworkModel;
     }
 }
 @end

@@ -56,6 +56,7 @@
     if ([segue.identifier isEqualToString:kPushHostLoadingGameSettingsVC])
     {
         LoadingGameSettingsViewController* loadingGameSettingsVC = (LoadingGameSettingsViewController*)segue.destinationViewController;
+        loadingGameSettingsVC.networkModel = self.hostNetworkModel;
     }
 }
 
@@ -80,6 +81,6 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.hostNetworkModel.playersNames.count;
+    return self.hostNetworkModel.numberOfPlayers;
 }
 @end

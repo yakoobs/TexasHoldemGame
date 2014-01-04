@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GameLogicModel.h"
+#import "GameNetworkModel.h"
 
 @interface MainBoardViewController : UIViewController
-@property (nonatomic,strong) GameLogicModel* gameLogicModel;
-
+@property (nonatomic, strong) GameLogicModel* logicModel;
+@property (nonatomic, strong) GameNetworkModel* networkModel;
 @end
