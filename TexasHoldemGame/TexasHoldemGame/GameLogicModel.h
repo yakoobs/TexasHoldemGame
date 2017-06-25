@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, GameStateType)
 @property(nonatomic) NSUInteger smallBlind;
 @property(nonatomic) NSUInteger bigBlind;
 
--(id)initWithPlayersNames:(NSArray*)paramPlayersNames;
+-(instancetype)initWithPlayersNames:(NSArray*)paramPlayersNames;
 -(void)activateNextPlayer;
 -(void)activePlayerChoseFold;
 -(void)activePlayerChoseCheck;

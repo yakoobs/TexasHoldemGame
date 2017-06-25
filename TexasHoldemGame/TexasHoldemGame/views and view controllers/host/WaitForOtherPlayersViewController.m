@@ -75,7 +75,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [self.hostNetworkModel.playersNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = (self.hostNetworkModel.playersNames)[indexPath.row];
     return cell;
 }
 

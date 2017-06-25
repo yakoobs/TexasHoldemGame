@@ -64,7 +64,7 @@
  * @param (NSUInteger)paramSmallBlind is the initial small blind in tournament, big blind is automatically multiply by 2
  * @param (id<BoardGameProtocol>)paramDelegate defines delegate to game model
  */
--(id)initWithPlayersNames:(NSArray*)paramPlayersNames
+-(instancetype)initWithPlayersNames:(NSArray*)paramPlayersNames
              initialStack:(NSUInteger)paramInitialStack
                smallBlind:(NSUInteger)paramSmallBlind
               andDelegate:(id<BoardGameProtocol>)paramDelegate;

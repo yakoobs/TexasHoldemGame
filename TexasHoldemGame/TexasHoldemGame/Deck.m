@@ -20,7 +20,7 @@ static const NSInteger kDeuceValue = 2;
 
 @implementation Deck
 
--(id)init
+-(instancetype)init
 {
     self = [super init];
     if (self)
@@ -64,8 +64,8 @@ static const NSInteger kDeuceValue = 2;
         return nil;
     }
     
-    NSUInteger randomIndex = arc4random() % [self.cardsInDeck count];
-    Card* card = [[self.cardsInDeck objectAtIndex:randomIndex] copy];
+    NSUInteger randomIndex = arc4random() % (self.cardsInDeck).count;
+    Card* card = [(self.cardsInDeck)[randomIndex] copy];
     [self.cardsInDeck removeObjectAtIndex:randomIndex];
     return card;
 }

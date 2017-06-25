@@ -36,7 +36,7 @@
 
 -(void)configurePlayerNicknameLabel
 {
-    self.playerNicknameLabel.text = [[UIDevice currentDevice] name];
+    self.playerNicknameLabel.text = [UIDevice currentDevice].name;
 }
 
 -(void)configureJoiningNetworkModel
@@ -73,13 +73,13 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:kCellIdentifier];
     }
-    cell.textLabel.text = [self.joiningNetworkModel.availableTournamentsNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = (self.joiningNetworkModel.availableTournamentsNames)[indexPath.row];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.joiningNetworkModel.availableTournamentsNames count];
+    return (self.joiningNetworkModel.availableTournamentsNames).count;
 }
 
 - (IBAction)joinGameButtonPressed:(UIButton *)sender

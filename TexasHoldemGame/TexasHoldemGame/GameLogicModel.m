@@ -21,7 +21,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 
 @implementation GameLogicModel
 
--(id)initWithPlayersNames:(NSArray*)paramPlayersNames
+-(instancetype)initWithPlayersNames:(NSArray*)paramPlayersNames
 {
     self = [self init];
     
@@ -32,7 +32,7 @@ const NSUInteger kInitialChipsAmount = 1500;
                                           smallBlind:self.smallBlind
                                          andDelegate:self];
         
-        [self setGameState:GameStateSettingPositions];
+        self.gameState = GameStateSettingPositions;
         self.blindsLevel = 0;
     }
     
@@ -100,7 +100,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 
 -(NSUInteger)smallBlind
 {
-    return [[self.smallBlinds objectAtIndex:self.blindsLevel] unsignedIntegerValue];
+    return [(self.smallBlinds)[self.blindsLevel] unsignedIntegerValue];
 }
 
 -(NSUInteger)bigBlind
@@ -113,14 +113,14 @@ const NSUInteger kInitialChipsAmount = 1500;
 {
     [self.board updateDealerPosition];
     
-    [self setGameState:GameStateStartingNewHandCards];
+    self.gameState = GameStateStartingNewHandCards;
 }
 
 -(void)performStartingNewHandState
 {
     [self.board startNewHand];
     
-    [self setGameState:GameStatePreFlop];
+    self.gameState = GameStatePreFlop;
 }
 
 -(void)performPreFlopState
@@ -133,7 +133,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 -(void)performPreFlopStateFinished
 {
     
-    [self setGameState:GameStateFlopShown];
+    self.gameState = GameStateFlopShown;
 }
 
 -(void)performFlopShownState
@@ -146,7 +146,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 -(void)performFlopShownStateFinished
 {
     
-    [self setGameState:GameStateTurnShown];
+    self.gameState = GameStateTurnShown;
 }
 
 -(void)performTurnShownState
@@ -158,7 +158,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 -(void)performTurnShownStateFinished
 {
     
-    [self setGameState:GameStateRiverShown];
+    self.gameState = GameStateRiverShown;
 }
 
 -(void)performRiverShownState
@@ -168,7 +168,7 @@ const NSUInteger kInitialChipsAmount = 1500;
 
 -(void)performRiverShownStateFinished
 {
-    [self setGameState:GameStateEndOfTheHand];
+    self.gameState = GameStateEndOfTheHand;
 }
 
 -(void)performEndOfTheHandState

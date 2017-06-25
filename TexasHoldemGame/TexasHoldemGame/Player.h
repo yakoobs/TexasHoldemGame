@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, PlayerOnTableState)
  * @param (NSString*)paramName name property of the Player object
  * @param (NSUInteger)paramStack amount of chips in init stack of Player object
  */
--(id)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack;
+-(instancetype)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack;
 
 -(void)playerGoesAllIn;
 

@@ -118,20 +118,20 @@ static const NSInteger kAceValue = 14;
     NSArray* cards = [self sortCards:paramCardsToEvaluate valueAscending:NO suitAscending:YES];
     for (NSInteger i = 0; i < cards.count - 4; i++)
     {
-        Card *card0 = [cards objectAtIndex:i];
-        Card *card1 = [cards objectAtIndex:i+1];
+        Card *card0 = cards[i];
+        Card *card1 = cards[i+1];
         if ([card0.suit isEqualToString:card1.suit])
         {
-            Card *card2 = [cards objectAtIndex:i+2];
+            Card *card2 = cards[i+2];
             if ([card1.suit isEqualToString:card2.suit])
             {
-                Card *card3 = [cards objectAtIndex:i+3];
+                Card *card3 = cards[i+3];
                 if ([card2.suit isEqualToString:card3.suit])
                 {
-                    Card *card4 = [cards objectAtIndex:i+4];
+                    Card *card4 = cards[i+4];
                     if ([card3.suit isEqualToString:card4.suit])
                     {
-                        NSArray * flushCombinationCards = [NSArray arrayWithObjects:card0, card1, card2, card3, card4, nil];
+                        NSArray * flushCombinationCards = @[card0, card1, card2, card3, card4];
                         self.descendingSortedCardsCombination = flushCombinationCards;
                         return YES;
                     }
@@ -151,36 +151,36 @@ static const NSInteger kAceValue = 14;
 -(BOOL)checkForStraight:(NSArray*)paramCardsToEvaluate
 {
     NSMutableArray* cards = [NSMutableArray arrayWithArray:[self sortCards:paramCardsToEvaluate valueAscending:NO]];
-    NSInteger firstCardValue = [(Card*)[cards objectAtIndex:0] value];
+    NSInteger firstCardValue = ((Card*)cards[0]).value;
     if (firstCardValue == kAceValue)
     {
-        Card* additionalAceForWheel = [[cards objectAtIndex:0] copy];
+        Card* additionalAceForWheel = [cards[0] copy];
         additionalAceForWheel.value = 1;
         [cards addObject:additionalAceForWheel];
     }
 
     for (NSInteger a = 0; a < cards.count-4; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
         if (tempCard1.value == tempCard2.value+1)
         {
             for (NSInteger b = a+1; b < cards.count-3; b++)
             {
-                Card * tempCard3 = [cards objectAtIndex:b+1];
+                Card * tempCard3 = cards[b+1];
                 if (tempCard2.value == tempCard3.value+1)
                 {
                     for (NSInteger c = b+1; c < cards.count-2; c++)
                     {
-                        Card * tempCard4 = [cards objectAtIndex:c+1];
+                        Card * tempCard4 = cards[c+1];
                         if (tempCard3.value == tempCard4.value+1)
                         {
                             for (NSInteger d = c+1; d < cards.count-1; d++)
                             {
-                                Card * tempCard5 = [cards objectAtIndex:d+1];
+                                Card * tempCard5 = cards[d+1];
                                 if (tempCard4.value == tempCard5.value+1)
                                 {
-                                    NSArray * straightCombinationCards = [NSArray arrayWithObjects:tempCard1, tempCard2, tempCard3, tempCard4, tempCard5, nil];
+                                    NSArray * straightCombinationCards = @[tempCard1, tempCard2, tempCard3, tempCard4, tempCard5];
                                     self.descendingSortedCardsCombination = straightCombinationCards;
                                     return YES;
                                 }
@@ -213,30 +213,30 @@ static const NSInteger kAceValue = 14;
     
     for (NSInteger a = 0; a < cards.count-4; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
         BOOL areSuitedConnected = (tempCard1.value == tempCard2.value+1) && [tempCard1.suit isEqualToString:tempCard2.suit];
         if (areSuitedConnected)
         {
             for (NSInteger b = a+1; b < cards.count-3; b++)
             {
-                Card * tempCard3 = [cards objectAtIndex:b+1];
+                Card * tempCard3 = cards[b+1];
                 areSuitedConnected = (tempCard2.value == tempCard3.value+1) && [tempCard2.suit isEqualToString:tempCard3.suit];
                 if (areSuitedConnected)
                 {
                     for (NSInteger c = b+1; c < cards.count-2; c++)
                     {
-                        Card * tempCard4 = [cards objectAtIndex:c+1];
+                        Card * tempCard4 = cards[c+1];
                         areSuitedConnected = (tempCard3.value == tempCard4.value+1) && [tempCard3.suit isEqualToString:tempCard4.suit];
                         if (areSuitedConnected)
                         {
                             for (NSInteger d = c+1; d < cards.count-1; d++)
                             {
-                                Card * tempCard5 = [cards objectAtIndex:d+1];
+                                Card * tempCard5 = cards[d+1];
                                 areSuitedConnected = (tempCard4.value == tempCard5.value+1) && [tempCard4.suit isEqualToString:tempCard5.suit];
                                 if (areSuitedConnected)
                                 {
-                                    NSArray * straightFlushCombinationCards = [NSArray arrayWithObjects:tempCard1, tempCard2, tempCard3, tempCard4, tempCard5, nil];
+                                    NSArray * straightFlushCombinationCards = @[tempCard1, tempCard2, tempCard3, tempCard4, tempCard5];
                                     self.descendingSortedCardsCombination = straightFlushCombinationCards;
                                     return YES;
                                 }
@@ -256,10 +256,10 @@ static const NSInteger kAceValue = 14;
     
     for (NSInteger a = 0; a < cards.count-3; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
-        Card * tempCard3 = [cards objectAtIndex:a+2];
-        Card * tempCard4 = [cards objectAtIndex:a+3];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
+        Card * tempCard3 = cards[a+2];
+        Card * tempCard4 = cards[a+3];
         
         BOOL allValuesAreEqual = (tempCard1.value == tempCard2.value) && (tempCard1.value == tempCard3.value) && (tempCard1.value == tempCard4.value);
         
@@ -268,13 +268,13 @@ static const NSInteger kAceValue = 14;
             Card * tempCard5;
             if (a == 0)
             {
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard5 = cards[4];
             }
             else
             {
-                tempCard5 = [cards objectAtIndex:0];
+                tempCard5 = cards[0];
             }
-            NSArray * fourOfKindCombinationCards = [NSArray arrayWithObjects:tempCard1, tempCard2, tempCard3, tempCard4, tempCard5, nil];
+            NSArray * fourOfKindCombinationCards = @[tempCard1, tempCard2, tempCard3, tempCard4, tempCard5];
             self.descendingSortedCardsCombination = fourOfKindCombinationCards;
             return YES;
         }
@@ -289,9 +289,9 @@ static const NSInteger kAceValue = 14;
     
     for (NSInteger a = 0; a < cards.count-2; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
-        Card * tempCard3 = [cards objectAtIndex:a+2];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
+        Card * tempCard3 = cards[a+2];
         
         BOOL allValuesAreEqual = (tempCard1.value == tempCard2.value) && (tempCard1.value == tempCard3.value);
         if(allValuesAreEqual)
@@ -300,21 +300,21 @@ static const NSInteger kAceValue = 14;
             Card * tempCard5;
             if (a == 0)
             {
-                tempCard4 = [cards objectAtIndex:3];
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard4 = cards[3];
+                tempCard5 = cards[4];
             }
             else if (a == 1)
             {
-                tempCard4 = [cards objectAtIndex:0];
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard4 = cards[0];
+                tempCard5 = cards[4];
             }
             else
             {
-                tempCard4 = [cards objectAtIndex:0];
-                tempCard5 = [cards objectAtIndex:1];
+                tempCard4 = cards[0];
+                tempCard5 = cards[1];
             }
             
-            NSArray * threeOfKindCombinationCards = [NSArray arrayWithObjects:tempCard1, tempCard2, tempCard3, tempCard4, tempCard5, nil];
+            NSArray * threeOfKindCombinationCards = @[tempCard1, tempCard2, tempCard3, tempCard4, tempCard5];
             self.descendingSortedCardsCombination = threeOfKindCombinationCards;
             return YES;
         }
@@ -337,8 +337,8 @@ static const NSInteger kAceValue = 14;
         
         for (NSInteger a = 0; a < tempArray.count-1; a++)
         {
-            Card * tempCard1 = [tempArray objectAtIndex:a];
-            Card * tempCard2 = [tempArray objectAtIndex:a+1];
+            Card * tempCard1 = tempArray[a];
+            Card * tempCard2 = tempArray[a+1];
             if (tempCard1.value == tempCard2.value)
             {
                 tempArray = [NSMutableArray arrayWithArray: @[tempCard1, tempCard2]];
@@ -356,14 +356,14 @@ static const NSInteger kAceValue = 14;
     
     for (NSInteger a = 0; a < cards.count-3; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
         if (tempCard1.value == tempCard2.value)
         {
             for (NSInteger b = a+2; b < cards.count-1; b++)
             {
-                Card * tempCard3 = [cards objectAtIndex:b];
-                Card * tempCard4 = [cards objectAtIndex:b+1];
+                Card * tempCard3 = cards[b];
+                Card * tempCard4 = cards[b+1];
                 if (tempCard3.value == tempCard4.value)
                 {
                     Card * tempCard5;
@@ -371,16 +371,16 @@ static const NSInteger kAceValue = 14;
                     {
                         if (b == 2)
                         {
-                            tempCard5 = [cards objectAtIndex:4];
+                            tempCard5 = cards[4];
                         }
                         else
                         {
-                            tempCard5 = [cards objectAtIndex:2];
+                            tempCard5 = cards[2];
                         }
                     }
                     else
                     {
-                        tempCard5 = [cards objectAtIndex:0];
+                        tempCard5 = cards[0];
                     }
                     return YES;
                 }
@@ -398,8 +398,8 @@ static const NSInteger kAceValue = 14;
     
     for (NSInteger a = 0; a < cards.count-1; a++)
     {
-        Card * tempCard1 = [cards objectAtIndex:a];
-        Card * tempCard2 = [cards objectAtIndex:a+1];
+        Card * tempCard1 = cards[a];
+        Card * tempCard2 = cards[a+1];
         if (tempCard1.value == tempCard2.value)
         {
             Card * tempCard3;
@@ -408,27 +408,27 @@ static const NSInteger kAceValue = 14;
 
             if (a == 0)
             {
-                tempCard3 = [cards objectAtIndex:2];
-                tempCard4 = [cards objectAtIndex:3];
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard3 = cards[2];
+                tempCard4 = cards[3];
+                tempCard5 = cards[4];
             }
             else if(a == 1)
             {
-                tempCard3 = [cards objectAtIndex:0];
-                tempCard4 = [cards objectAtIndex:3];
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard3 = cards[0];
+                tempCard4 = cards[3];
+                tempCard5 = cards[4];
             }
             else if(a == 2)
             {
-                tempCard3 = [cards objectAtIndex:0];
-                tempCard4 = [cards objectAtIndex:1];
-                tempCard5 = [cards objectAtIndex:4];
+                tempCard3 = cards[0];
+                tempCard4 = cards[1];
+                tempCard5 = cards[4];
             }
             else
             {
-                tempCard3 = [cards objectAtIndex:0];
-                tempCard4 = [cards objectAtIndex:1];
-                tempCard5 = [cards objectAtIndex:2];
+                tempCard3 = cards[0];
+                tempCard4 = cards[1];
+                tempCard5 = cards[2];
             }
             return YES;
         }
@@ -452,20 +452,20 @@ static NSString * const kSuitOfCardPropertyName = @"suit";
 -(NSArray *) sortCards:(NSArray *)cards valueAscending:(BOOL)isAscending
 {
     NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:kValueOfCardPropertyName ascending:isAscending];
-    return [cards sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
+    return [cards sortedArrayUsingDescriptors:@[sorter]];
 }
 
 -(NSArray *) sortCards:(NSArray *)cards  suitAscending:(BOOL)isAscending
 {
     NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:kSuitOfCardPropertyName ascending:isAscending];
-    return [cards sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
+    return [cards sortedArrayUsingDescriptors:@[sorter]];
 }
 
 -(NSArray *) sortCards:(NSArray *)cards  valueAscending:(BOOL)isValueAscending suitAscending:(BOOL)isSuitAscending
 {
     NSSortDescriptor *sorter0 = [NSSortDescriptor sortDescriptorWithKey:kValueOfCardPropertyName ascending:isValueAscending];
     NSSortDescriptor *sorter1 = [NSSortDescriptor sortDescriptorWithKey:kSuitOfCardPropertyName ascending:isSuitAscending];
-    return [cards sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sorter1,sorter0,nil]];
+    return [cards sortedArrayUsingDescriptors:@[sorter1,sorter0]];
 }
 
 

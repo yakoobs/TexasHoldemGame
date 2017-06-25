@@ -15,7 +15,7 @@ NSString* const kPlayerNameInfo = @"tournamentName";
 
 -(void)configureSessionDetails
 {
-    NSString* peerIDFromDeviceName = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString* peerIDFromDeviceName = [UIDevice currentDevice].identifierForVendor.UUIDString;
     self.peerID = [[MCPeerID alloc] initWithDisplayName:peerIDFromDeviceName];
     self.session = [[MCSession alloc] initWithPeer:self.peerID];
     self.session.delegate = self;

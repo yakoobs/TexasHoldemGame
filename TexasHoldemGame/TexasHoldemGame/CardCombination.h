@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, CardCombinationType)
  * Initiates CardCombination object with an array of cards to evaluate.
  * @param (NSArray*)paramCardsToEvaluate should contain 7 Card objects (5 from board + 2 in hand)
  */
--(instancetype)initWithCardsToEvaluate:(NSArray*)paramCardsToEvaluate;
+-(instancetype)initWithCardsToEvaluate:(NSArray*)paramCardsToEvaluate NS_DESIGNATED_INITIALIZER;
 
 /**
 * YES if combination is higher than paramCardCombination.

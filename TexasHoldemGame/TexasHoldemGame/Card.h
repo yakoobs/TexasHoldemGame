@@ -13,6 +13,6 @@
 @property (copy, nonatomic) NSString* suit;
 @property NSInteger value;
 
--(instancetype)initWithRank:(NSString*)paramRank suit:(NSString*)paramSuit andValue:(NSInteger)paramValue;
+-(instancetype)initWithRank:(NSString*)paramRank suit:(NSString*)paramSuit andValue:(NSInteger)paramValue NS_DESIGNATED_INITIALIZER;
 
 @end

@@ -24,7 +24,7 @@
 
 @implementation Board
 
--(id)initWithPlayersNames:(NSArray*)paramPlayersNames
+-(instancetype)initWithPlayersNames:(NSArray*)paramPlayersNames
              initialStack:(NSUInteger)paramInitialStack
                smallBlind:(NSUInteger)paramSmallBlind
               andDelegate:(id<BoardGameProtocol>)paramDelegate
@@ -36,7 +36,7 @@
     for (NSString* playerName in paramPlayersNames)
     {
         Player * player = [[Player alloc] initWithName:playerName stack:paramInitialStack];
-        player.sittingPositionRegardingToDealer = [tempPlayers count];//TODO: randomize players sitting positions
+        player.sittingPositionRegardingToDealer = tempPlayers.count;//TODO: randomize players sitting positions
         [tempPlayers addObject:player];
     }
     
@@ -337,7 +337,7 @@
 
 -(void)lastManStandingIsTakingThePot
 {
-    Player * player = [self.playersWithCards objectAtIndex:0];
+    Player * player = (self.playersWithCards)[0];
     player.stack += self.pot;
     player.playerState = PlayerStateWaitingNextHand;
     [self.delegate allOpponentsFolded];

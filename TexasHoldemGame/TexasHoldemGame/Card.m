@@ -29,7 +29,7 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"%@%@ value:%@",self.rank,self.suit,[NSNumber numberWithInteger:self.value]];
+    return [NSString stringWithFormat:@"%@%@ value:%@",self.rank,self.suit,@(self.value)];
 }
 
 @end

@@ -45,7 +45,7 @@
 withDiscoveryInfo:(NSDictionary *)info
 {
     [self.availablePeers addObject:peerID];
-    [self.availableTournamentsNames addObject:[info objectForKey:kPlayerNameInfo]];
+    [self.availableTournamentsNames addObject:info[kPlayerNameInfo]];
     [self.delegate listOfAvailableHostsDidChange];
 
 }
@@ -70,7 +70,7 @@ withDiscoveryInfo:(NSDictionary *)info
 -(void)joinToSelectedHostAtIndex:(NSUInteger)paramIndex
 {
     NSData* context = [self.playerName dataUsingEncoding:NSUTF8StringEncoding];
-    self.serverPeerId = [self.availablePeers objectAtIndex:paramIndex];
+    self.serverPeerId = (self.availablePeers)[paramIndex];
     const NSTimeInterval connectionTimeout = 10;
     [self.nearbyServiceBrowser invitePeer:self.serverPeerId
                                 toSession:self.session

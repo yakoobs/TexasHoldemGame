@@ -10,7 +10,7 @@
 
 @implementation Player
 
--(id)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack
+-(instancetype)initWithName:(NSString*)paramName stack:(NSUInteger)paramStack
 {
     self = [self init];
     
